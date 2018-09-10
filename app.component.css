@@ -1,0 +1,105 @@
+
+/* Great debugging tool!*/
+div {
+  /*border: 1px none black; */
+  /* padding: 0px; */
+  overflow:auto;
+}
+
+
+body {
+  font-family: Arial, monospace;
+}
+
+td {
+  height:25px;
+  font-family:monospace;
+  text-align:right;
+  font-size: 15px;
+}
+th {
+  font-family:monospace;
+  text-align:right;
+  font-size: 15px;
+}
+table {
+  width:430px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+button.left-button {
+  float:left;
+  position:relative;
+  top:35px; 
+  left:-5px;
+}
+
+button.right-button {
+  float:left;
+  position:relative;
+  top: 20px;
+  left:3px;
+}
+
+#banner {
+    background-color: red;
+    width:100%;
+    height:70px;
+    overflow:visible;
+
+}
+  
+#left {
+  content: "";
+  clear: both;
+  display: table;
+  width:66%;
+  float:left;
+}
+  
+#menu {
+  background-color: green;
+  height:75px;
+}
+
+.menu-items {
+  list-style-type:none;
+  padding-left:0;
+}
+
+.menu-item {
+  display: inline;
+  padding: 5px 5px; 
+  cursor: pointer; /* Pointer/hand icon */
+  color: white; /* White text */
+  text-decoration: underline;
+}
+  
+#content {
+  background-color: orange;
+  height:275px;
+}
+  
+#right {
+  margin: 0 0 0 66%;
+}  
+.advert1 {
+  background-color: yellow;
+  height:175px;
+}
+
+.advert2{
+  background-color: brown;
+  height:175px;
+}
+  
+#footer {
+  background-color: black;
+  width:100%;
+  height:50px;
+  clear:both;
+  color: white; /* White text */
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+        <div id="banner">
+          <h2>Banner</h2>
+          <div class="date-picker">
+              <button class="left-button">+</button>
+              <app-date (childEvent)="childEvent($event)"></app-date>
+              <button class="right-button">-</button>
+          </div>
+        </div>
+        <div id="left">
+          <div id="menu"> 
+            <!-- <h2>menu</h2> -->
+            <ul class="menu-items">
+                <li class="menu-item" (click)="onSelect(division)" *ngFor="let division of divisions">
+                  {{division.menu}} 
+                </li>
+          </ul>
+        </div>
+        <div id="content">
+            AL: XXXX 
+                <router-outlet></router-outlet>
+        </div>
+        </div>
+        <div id="right">
+          <div class="advert1">
+            <h1>$$$ A</h1>
+            <nav>
+              <a routerLink="/subscriptions" routerLinkActive="active">Departments</a>
+              <a routerLink="/metrics" routerLinkActive="active">Metrics</a>
+            </nav>
+          </div>
+          <div class="advert2"> 
+            <h2>$$$ B</h2>
+          </div>
+        </div>
+        <div id="footer"> <h3>FOOTER</h3>
+        </div>
+</body>
+</html>
+
