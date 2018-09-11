@@ -6,7 +6,7 @@ import { MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateM
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms'
 
-import {newEvent} from '../../testing';
+import {newEvent} from '../testing';
 import { By }                 from '@angular/platform-browser';
 import { FilterPipe} from '../filter.pipe';
 
