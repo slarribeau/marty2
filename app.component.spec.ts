@@ -1,7 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
 import { DateComponent} from './date/date.component'
-import { RouterModule } from '@angular/router';
-import { MaterialModule, MdDatepickerModule, MdNativeDateModule } from '@angular/material';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,7 +10,6 @@ import { AppComponent } from './app.component';
 import {StandingsComponent} from './standings/standings.component';
 import { Test2Component } from './test2/test2.component';
 import { MlbRepoService} from './mlb-repo.service'
-import { DateComponent} from './date/date.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatFormFieldModule, MatNativeDateModule, MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -25,7 +22,6 @@ import {APP_BASE_HREF} from '@angular/common';
 
 
 
-import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
