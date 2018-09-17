@@ -25,6 +25,7 @@ describe('StandingsComponent', () => {
   });
 
   it('should create', () => {
+        console.log("-------standings.component.spec.ts");
     expect(component).toBeTruthy();
   });
 });

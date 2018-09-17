@@ -55,6 +55,8 @@ describe('DateComponent when tested directly', () => {
 
   it('should create', () => {
     expect(comp).toBeTruthy();
+        console.log("-------date.component.spec.ts");
+
   });
 
   it('should raise selected event when clicked (triggerEventHandler) -- make sure runs with $ ng test -sm=false -- else you get XMLHttpRequest error', () => {

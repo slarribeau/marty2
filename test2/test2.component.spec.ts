@@ -20,6 +20,7 @@ describe('Test2Component', () => {
   });
 
   it('should create', () => {
+    console.log("-------test2.component.spec.ts");
     expect(component).toBeTruthy();
   });
 });
