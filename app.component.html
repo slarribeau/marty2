@@ -13,6 +13,7 @@
         </div>
         <div id="left">
           <div id="menu"> 
+
             <!-- <h2>menu</h2> -->
             <ul class="menu-items">
                 <li class="menu-item" (click)="onSelect(division)" *ngFor="let division of divisions">
@@ -21,6 +22,8 @@
           </ul>
         </div>
         <div id="content">
+            <img src="iconmonstr-facebook-4.svg" alt="Kiwi standing on oval">
+
             AL: XXXX 
                 <router-outlet></router-outlet>
         </div>
@@ -37,7 +40,17 @@
             <h2>$$$ B</h2>
           </div>
         </div>
-        <div id="footer"> <h3>FOOTER</h3>
+        <div id="footer"> 
+          <h3>FOOTER</h3>
+          <!-- https://iconmonstr.com/facebook-4-svg/ -->
+          <img src="assets/iconmonstr-facebook-4.svg" alt="Follow me on facebook">
+          <!-- https://iconmonstr.com/twitter-4-svg -->
+          <img src="assets/iconmonstr-twitter-4.svg" alt="Follow me on twitter">
+          <!-- https://iconmonstr.com/linkedin-4-svg/ -->
+          <img src="assets/iconmonstr-linkedin-4.svg" alt="Follow me on instagram">
+          <!-- https://iconmonstr.com/instagram-14-svg/ -->
+          <img src="assets/iconmonstr-instagram-14.svg" alt="Follow me on linked-in">
+
         </div>
 </body>
 </html>
