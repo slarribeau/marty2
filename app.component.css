@@ -54,7 +54,7 @@ button.right-button {
   content: "";
   clear: both;
   display: table;
-  width:65%;
+  width:64%;
   float:left;
 }
   
@@ -82,7 +82,7 @@ button.right-button {
 }
   
 #right {
-  margin: 0 0 0 65%;
+  margin: 0 0 0 64%;
 }  
 .advert1 {
   background-color: white;
