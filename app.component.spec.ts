@@ -26,7 +26,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
   declarations: [
-    AppComponent,
+    AppComponent, 
     StandingsComponent,
     Test2Component,
     DateComponent,
@@ -41,7 +41,7 @@ describe('AppComponent', () => {
    MatFormFieldModule, MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/'}, MlbRepoService, DateUtilitiesService],
-  bootstrap: [AppComponent]
+  //bootstrap: [AppComponent]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
