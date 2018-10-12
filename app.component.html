@@ -29,7 +29,19 @@
         </div>
         </div>
         <div id="right">
+          <div id="menu"> 
 
+
+          <ul class="menu-items">
+              <li class="menu-item" (click)="onSelect(division)" *ngFor="let division of divisions">
+                {{division.menu}} 
+              </li>
+        </ul>
+      </div>
+      <div id="content">
+          AL: XXXX 
+              <router-outlet></router-outlet>
+      </div>
         </div>
         <div id="footer"> 
           <!-- https://iconmonstr.com/facebook-4-svg/ -->
