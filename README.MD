@@ -65,4 +65,4 @@ ng test
 ng serve --open
 
 
-
+12) Move styles.css to src directory 
