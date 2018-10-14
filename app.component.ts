@@ -18,7 +18,9 @@ export class AppComponent implements OnInit {
   processChildEvent(date) {
     console.log("processChildEvent " + date);
     this.router.navigateByUrl('/subscriptions/1/'+date);
-
+    this.router.navigate([{ outlets: {
+      sidebar: ['chat']
+    }}]);
   }
 }
 
