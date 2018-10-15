@@ -1,5 +1,6 @@
-import { OnInit, Component } from '@angular/core';
+import { OnInit, Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import {DateComponent} from './date/date.component';
 
 
 @Component({
@@ -9,11 +10,14 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'my-app';
-
+  public name = "Vishwas";
   ngOnInit() {
   }
 
   constructor(private router: Router) { }
+
+  @ViewChild(DateComponent) child: DateComponent;
+
 
   processChildEvent(date) {
     console.log("processChildEvent " + date);
@@ -28,10 +32,13 @@ export class AppComponent implements OnInit {
 
   incrDate(){
     console.log("inc function called");
+    this.name="+";
   }
 
   decrDate(){
     console.log("dec function called");
+    this.name="-";
+    this.child.decr();
   }
 
 }
