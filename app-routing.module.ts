@@ -10,23 +10,7 @@ export const routes: Routes = [
   { path: '', redirectTo: '/metrics', pathMatch: 'full'},
   { path: 'subscriptions', component: Test2Component },
   { path: 'subscriptions/:id/:date', component: StandingsComponent},
-  { path: 'subscriptionss/:id/:date', component: StandingsComponent, outlet: 'sidebar' }
-/*
-  { path: 'subscriptions/:id/:date', 
-    component: AppComponent,
-    children: [
-      {
-        path:'',
-         component: StandingsComponent,
-         outlet: 'child1'
-      },
-      {
-         path:'',
-         component: StandingsComponent,
-         outlet: 'child2'
-      }
-    ]
-  },*/
+  { path: 'subscriptionss/:id/:date', component: StandingsComponent, outlet: 'sidebar' },
   { path: 'metrics', component: Test2Component},
   { path: '**', component: Test2Component }
 
