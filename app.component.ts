@@ -17,11 +17,13 @@ export class AppComponent implements OnInit {
 
   processChildEvent(date) {
     console.log("processChildEvent " + date);
-    this.router.navigateByUrl('/subscriptionss/1/'+date);
-    //this.router.navigate(['/', 'red-pill']);
-    this.router.navigate([{ outlets: {
-      sidebar: ['subscriptionss', '1', '2018-4-26']
-    }}]);
+    //this.router.navigateByUrl('/subscriptions/1/'+date);
+    //this.router.navigate([{ outlets: {
+    //  sidebar: ['subscriptionss', '1', '2018-4-26']
+    //}}]);
+    let x = '/subscriptions/1/'+date+'(sidebar:'+'subscriptionss/1/'+date+')';
+    console.log(x);
+    this.router.navigateByUrl(x);
   }
 }
 
