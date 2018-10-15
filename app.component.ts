@@ -25,5 +25,14 @@ export class AppComponent implements OnInit {
     console.log(x);
     this.router.navigateByUrl(x);
   }
+
+  incrDate(){
+    console.log("inc function called");
+  }
+
+  decrDate(){
+    console.log("dec function called");
+  }
+
 }
 

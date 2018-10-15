@@ -12,9 +12,9 @@
           <div id="menu"> 
 
               <div class="date-picker">
-                  <button class="left-button">+</button>
+                  <button class="left-button" (click)="incrDate()">+</button>
                   <app-date (childEvent)="processChildEvent($event)"></app-date>
-                  <button class="right-button">-</button>
+                  <button class="right-button" (click)="decrDate()">-</button>
               </div>
             <!-- <h2>menu</h2> -->
             <ul class="menu-items">
