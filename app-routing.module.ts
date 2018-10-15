@@ -10,7 +10,7 @@ export const routes: Routes = [
   { path: '', redirectTo: '/metrics', pathMatch: 'full'},
   { path: 'subscriptions', component: Test2Component },
   { path: 'subscriptions/:id/:date', component: StandingsComponent },
-  { path: 'chat', component: Test2Component, outlet: 'sidebar' }
+  { path: 'subscriptionss/:id/:date', component: StandingsComponent, outlet: 'sidebar' }
 /*
   { path: 'subscriptions/:id/:date', 
     component: AppComponent,
