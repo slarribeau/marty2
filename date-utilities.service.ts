@@ -12,6 +12,13 @@ export class DateUtilitiesService {
     myDate.setTime(myDate.getTime() - dateOffset);
     return myDate;
   }
+
+  public getNextDayObject(inDate: Date) : Date {
+    let myDate = new Date(inDate);
+    let dateOffset = (24*60*60*1000) * 1; //1 days
+    myDate.setTime(myDate.getTime() + dateOffset);
+    return myDate;
+  }
   
   public dateObject2String(date: Date) : String {
     let dateString = date.getFullYear() + "-";

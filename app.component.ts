@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
 
   incrDate(){
     console.log("inc function called");
+    this.child.incr();
   }
 
   decrDate(){
