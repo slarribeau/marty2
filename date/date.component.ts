@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Input, Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {DateUtilitiesService} from '../date-utilities.service'
 import {ViewEncapsulation} from '@angular/core'
 
@@ -37,8 +37,16 @@ import {ViewEncapsulation} from '@angular/core'
 })
 export class DateComponent implements OnInit {
   myDateObject: Date;
-  @Output() public childEvent = new EventEmitter();
+  //@Input() public parentData;
+    public _parentData;
+    @Input('parentData') 
+    public set value(val: string) {
+      this._parentData = val;
+      this.processParentData();
+    }
 
+  @Output() public childEvent = new EventEmitter();
+  
   constructor(private dateUtil: DateUtilitiesService) { }
 
   ngOnInit() {
@@ -49,6 +57,9 @@ export class DateComponent implements OnInit {
 
   decr() {
     this.myDateObject=this.dateUtil.getPrevDayObject(this.myDateObject);
+    let dateString = this.dateUtil.dateObject2String(this.myDateObject);
+    console.log("Date.component: about to emit" + dateString);
+    this.childEvent.emit(dateString);
   }
 
   sendEvent(event){ 
@@ -58,4 +69,17 @@ export class DateComponent implements OnInit {
     this.childEvent.emit(dateString);
   }
   
+  //ngOnChanges(changes) {
+  processParentData() {
+    console.log('this.childFunction()');
+    if (this._parentData=='+') {
+      console.log('+');
+    } else if (this._parentData=='-') {
+      console.log('-');
+      this.decr();
+    } else {
+      console.log("unknown");
+    }
+  }
+
 }
