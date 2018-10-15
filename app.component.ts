@@ -10,7 +10,6 @@ import {DateComponent} from './date/date.component';
 })
 export class AppComponent implements OnInit {
   title = 'my-app';
-  public name = "Vishwas";
   ngOnInit() {
   }
 
@@ -32,12 +31,10 @@ export class AppComponent implements OnInit {
 
   incrDate(){
     console.log("inc function called");
-    this.name="+";
   }
 
   decrDate(){
     console.log("dec function called");
-    this.name="-";
     this.child.decr();
   }
 

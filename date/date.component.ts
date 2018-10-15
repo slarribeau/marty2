@@ -37,16 +37,7 @@ import {ViewEncapsulation} from '@angular/core'
 })
 export class DateComponent implements OnInit {
   myDateObject: Date;
-  //@Input() public parentData;
-    public _parentData;
-    @Input('parentData') 
-    public set value(val: string) {
-      this._parentData = val;
-      this.processParentData();
-    }
-
   @Output() public childEvent = new EventEmitter();
-  
   constructor(private dateUtil: DateUtilitiesService) { }
 
   ngOnInit() {
@@ -67,19 +58,6 @@ export class DateComponent implements OnInit {
     let dateString = this.dateUtil.dateObject2String(event.value);
     console.log("Date.component: about to emit" + dateString);
     this.childEvent.emit(dateString);
-  }
-  
-  //ngOnChanges(changes) {
-  processParentData() {
-    console.log('this.childFunction()');
-    if (this._parentData=='+') {
-      console.log('+');
-    } else if (this._parentData=='-') {
-      console.log('-');
-      this.decr();
-    } else {
-      console.log("unknown");
-    }
   }
 
 }
