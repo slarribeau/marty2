@@ -5,16 +5,18 @@
 <body>
         <div id="banner">
           <!-- https://www.publicdomainpictures.net/en/view-image.php?image=90914&picture=baseball-player-action-shot -->
+          <a href="/">
           <img src="assets/baseball-player-action-shot.jpg" alt="baseball action image">
+          </a>
         </div>
         <div id="left">
           
           <div id="menu"> 
 
               <div class="date-picker">
-                  <button class="left-button" (click)="incrDate()">+</button>
+                  <button class="left-button" (click)="decrDate()">-</button>
                   <app-date (childEvent)="processChildEvent($event)"></app-date>
-                  <button class="right-button" (click)="decrDate()">-</button>
+                  <button class="right-button" (click)="incrDate()">+</button>
               </div>
             <!-- <h2>menu</h2> -->
             <ul class="menu-items">
