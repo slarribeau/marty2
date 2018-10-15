@@ -47,6 +47,10 @@ export class DateComponent implements OnInit {
     console.log("Date.component: ngOnInit" + this.myDateObject)
   }
 
+  decr() {
+    this.myDateObject=this.dateUtil.getPrevDayObject(this.myDateObject);
+  }
+
   sendEvent(event){ 
     console.log("Date.component: send event received: " + event.value)
     let dateString = this.dateUtil.dateObject2String(event.value);
