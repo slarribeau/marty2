@@ -1,25 +1,25 @@
 <!DOCTYPE HTML>
-<html>
-<head>
-</head>
-<body>
-        <div id="banner">
-          <!-- https://www.publicdomainpictures.net/en/view-image.php?image=90914&picture=baseball-player-action-shot -->
-          <a href="/">
-          <img src="assets/baseball-player-action-shot.jpg" alt="baseball action image">
-          </a>
-        </div>
+  <html>
+  <head>
+  </head>
+  <body>
+    <div id="banner">
+      <!-- https://www.publicdomainpictures.net/en/view-image.php?image=90914&picture=baseball-player-action-shot -->
+      <a href="/">
+        <img src="assets/baseball-player-action-shot.jpg" alt="baseball action image">
+      </a>
+    </div>
 
-        <div id="menu"> 
+    <div id="menu"> 
             <div class="date-picker-fmt">
                 <button class="left-button" (click)="decrDate()">-</button>
                 <app-date (childEvent)="processChildEvent($event)"></app-date>
                 <button class="right-button" (click)="incrDate()">+</button>
             </div>
-        </div>
+    </div>
 
 
-        <div id="left">
+    <div id="left">
           <div class="content">
               <select [(ngModel)]="currentLeagueLeft" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
                 <option *ngFor="let league of leagueChoices" [value]="league.value">{{league.label}} </option>
@@ -31,9 +31,9 @@
 
               <router-outlet></router-outlet> 
            </div>
-        </div>
+    </div>
 
-        <div id="right">
+    <div id="right">
           <div class="content">
               <select [(ngModel)]="currentLeagueRight" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
                   <option *ngFor="let league of leagueChoices" [value]="league.value">{{league.label}} </option>
@@ -44,9 +44,10 @@
                 </select>
 
               <router-outlet name='sidebar'></router-outlet>
-          </div>
         </div>
-        <div id="footer"> 
+    </div>
+
+    <div id="footer"> 
           <!-- https://iconmonstr.com/facebook-4-svg/ -->
           <a href="https://www.facebook.com/slarribeau" target="_blank">
           <img src="assets/iconmonstr-facebook-4.svg" alt="Follow me on facebook">
@@ -78,9 +79,6 @@
 
             <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=scottlarribea-20&marketplace=amazon&region=US&placement=B018UQ5AMS&asins=B018UQ5AMS&linkId=6ae9de59c51bad77d6dc7640bbecb781&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
             </iframe> 
-
-
-
           </div>
           <div class="advert2"> 
             <!-- possibly insert taboola click bait here -->
@@ -94,8 +92,7 @@
             });
             </script>
           </div>
-        </div>
-        
-</body>
+    </div>      
+  </body>
 </html>
 
