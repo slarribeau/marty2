@@ -10,9 +10,6 @@ import {DateComponent} from './date/date.component';
 })
 export class AppComponent implements OnInit {
   title = 'my-app';
-  types;
-  order;
-  value;
   brandFont;
 
   fontChoices = [
@@ -31,22 +28,8 @@ export class AppComponent implements OnInit {
     this.brandFont = this.fontChoices[0].value
   }
   
-  callType(value){
-    console.log(value);
-    this.order.type=value;
-  }
-  
-  onSubmit() {
-    console.log(this.order);
-  }
 
-  constructor(private router: Router) { 
-    this.types = [ 'type1', 'type2', 'type3' ];
-    this.order = {
-      type: 'type1',
-      name: 'some name'
-    };
-  }
+  constructor(private router: Router) { }
 
   @ViewChild(DateComponent) child: DateComponent;
 
