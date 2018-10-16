@@ -10,10 +10,41 @@ import {DateComponent} from './date/date.component';
 })
 export class AppComponent implements OnInit {
   title = 'my-app';
+  types;
+  order;
+  value;
+
+  fontChoices = [
+    {
+      label: 'Trebuchet',
+      value: "'Trebuchet MS', 'Helvetica Neue', Arial, sans-serif"
+    },
+    {
+      label: 'Georgia',
+      value: 'Georgia, times, serif'
+    }
+ ];
+
+  
   ngOnInit() {
   }
+  
+  callType(value){
+    console.log(value);
+    this.order.type=value;
+  }
+  
+  onSubmit() {
+    console.log(this.order);
+  }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    this.types = [ 'type1', 'type2', 'type3' ];
+    this.order = {
+      type: 'type1',
+      name: 'some name'
+    };
+  }
 
   @ViewChild(DateComponent) child: DateComponent;
 
@@ -39,9 +70,16 @@ export class AppComponent implements OnInit {
     this.child.decr();
   }
 
-  myFunction() {
-    let x = document.getElementById("mySelect").nodeValue;
-    console.log(x);
+  myFunction(y) {
+    let x = document.getElementById("mySelect");
+    console.log(event.target);
   }
+
+  setStyle(e, which) {
+    //document.documentElement.style.setProperty(which, e);
+    console.log(which);
+    console.log(e);
+  }
+
 }
 

@@ -20,12 +20,38 @@
               </div>
         </div>
         <div id="content">
-            <select id="mySelect" onchange="myFunction()">
+            <select id="mySelect" (change)="myFunction($event)">
                 <option value="Audi">Audi
                 <option value="BMW">BMW
                 <option value="Mercedes">Mercedes
                 <option value="Volvo">Volvo
              </select>
+
+             <form (submit)="onSubmit()">
+                <div class="form-group">
+                  <label for="type">Type :</label>
+                  <input class="form-control" [(ngModel)]="order.name" name="something" ngControl="name"/>
+                </div>
+
+                <div class="form-group">
+                  <label for="type">Type :</label>
+                  <select class="form-control"  (change)="callType(type.value)">
+                    <option *ngFor="let type of types" [value]="type">{{type}}</option>
+                  </select> 
+                </div> 
+
+                <button type="submit">Submit</button>
+              </form>
+
+              <select [(ngModel)]="brandFont"
+              id="brandFontmenu"
+              (ngModelChange)="setStyle($event,'--font-family-brand')">
+              <option *ngFor="let font of fontChoices"
+                [value]="font.value">{{font.label}}
+   </option>
+</select>
+
+
               <router-outlet></router-outlet> 
         </div>
         </div>
