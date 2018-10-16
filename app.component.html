@@ -43,15 +43,9 @@
                 <button type="submit">Submit</button>
               </form>
 
-              <select [(ngModel)]="brandFont"
-              id="brandFontmenu"
-              (ngModelChange)="setStyle($event,'--font-family-brand')">
-              <option *ngFor="let font of fontChoices"
-                [value]="font.value">{{font.label}}
-   </option>
-</select>
-
-
+              <select [(ngModel)]="brandFont" id="brandFontmenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
+                <option *ngFor="let font of fontChoices" [value]="font.value">{{font.label}} </option>
+              </select>
               <router-outlet></router-outlet> 
         </div>
         </div>

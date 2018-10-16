@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   types;
   order;
   value;
+  brandFont;
 
   fontChoices = [
     {
@@ -27,6 +28,7 @@ export class AppComponent implements OnInit {
 
   
   ngOnInit() {
+    this.brandFont = this.fontChoices[0].value
   }
   
   callType(value){
