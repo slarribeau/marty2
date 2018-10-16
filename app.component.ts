@@ -10,7 +10,9 @@ import {DateComponent} from './date/date.component';
 })
 export class AppComponent implements OnInit {
   title = 'my-app';
-  currentLeague;
+  currentLeagueLeft;
+  currentLeagueRight;
+
 
   leagueChoices = [
     {
@@ -25,7 +27,9 @@ export class AppComponent implements OnInit {
 
   
   ngOnInit() {
-    this.currentLeague = this.leagueChoices[0].value
+    this.currentLeagueLeft = this.leagueChoices[0].value
+    this.currentLeagueRight = this.leagueChoices[0].value
+
   }
   
 
