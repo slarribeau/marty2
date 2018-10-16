@@ -11,87 +11,87 @@
     </div>
 
     <div id="menu"> 
-            <div class="date-picker-fmt">
-                <button class="left-button" (click)="decrDate()">-</button>
-                <app-date (childEvent)="processChildEvent($event)"></app-date>
-                <button class="right-button" (click)="incrDate()">+</button>
-            </div>
+      <div class="date-picker-fmt">
+        <button class="left-button" (click)="decrDate()">-</button>
+        <app-date (childEvent)="processChildEvent($event)"></app-date>
+        <button class="right-button" (click)="incrDate()">+</button>
+      </div>
     </div>
 
 
     <div id="left">
-          <div class="content">
-              <select [(ngModel)]="currentLeagueLeft" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
-                <option *ngFor="let league of leagueChoices" [value]="league.value">{{league.label}} </option>
-              </select>
+      <div class="content">
+        <select [(ngModel)]="currentLeagueLeft" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
+          <option *ngFor="let league of leagueChoices" [value]="league.value">{{league.label}} </option>
+        </select>
 
-              <select [(ngModel)]="currentDivisionLeft" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
-                  <option *ngFor="let division of divisionChoices" [value]="division.value">{{division.label}} </option>
-                </select>
+        <select [(ngModel)]="currentDivisionLeft" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
+          <option *ngFor="let division of divisionChoices" [value]="division.value">{{division.label}} </option>
+        </select>
 
-              <router-outlet></router-outlet> 
-           </div>
+        <router-outlet></router-outlet> 
+      </div>
     </div>
 
     <div id="right">
-          <div class="content">
-              <select [(ngModel)]="currentLeagueRight" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
-                  <option *ngFor="let league of leagueChoices" [value]="league.value">{{league.label}} </option>
-              </select>
+      <div class="content">
+        <select [(ngModel)]="currentLeagueRight" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
+          <option *ngFor="let league of leagueChoices" [value]="league.value">{{league.label}} </option>
+        </select>
 
-              <select [(ngModel)]="currentDivisionRight" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
-                  <option *ngFor="let division of divisionChoices" [value]="division.value">{{division.label}} </option>
-                </select>
+        <select [(ngModel)]="currentDivisionRight" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
+          <option *ngFor="let division of divisionChoices" [value]="division.value">{{division.label}} </option>
+        </select>
 
-              <router-outlet name='sidebar'></router-outlet>
-        </div>
+        <router-outlet name='sidebar'></router-outlet>
+      </div>
     </div>
 
     <div id="footer"> 
-          <!-- https://iconmonstr.com/facebook-4-svg/ -->
-          <a href="https://www.facebook.com/slarribeau" target="_blank">
-          <img src="assets/iconmonstr-facebook-4.svg" alt="Follow me on facebook">
-          </a>
+      <!-- https://iconmonstr.com/facebook-4-svg/ -->
+      <a href="https://www.facebook.com/slarribeau" target="_blank">
+        <img src="assets/iconmonstr-facebook-4.svg" alt="Follow me on facebook">
+      </a>
 
-          <!-- https://iconmonstr.com/twitter-4-svg -->
-          <a href="https://www.twitter.com/slarribeau" target="_blank">
-          <img src="assets/iconmonstr-twitter-4.svg" alt="Follow me on twitter">
-          </a>
+      <!-- https://iconmonstr.com/twitter-4-svg -->
+      <a href="https://www.twitter.com/slarribeau" target="_blank">
+        <img src="assets/iconmonstr-twitter-4.svg" alt="Follow me on twitter">
+      </a>
 
-          <!-- https://iconmonstr.com/linkedin-4-svg/ -->
-          <a href="https://www.linkedin.com/in/scottlarribeau" target="_blank">
-          <img src="assets/iconmonstr-linkedin-4.svg" alt="Follow me on instagram">
-          </a>
+      <!-- https://iconmonstr.com/linkedin-4-svg/ -->
+      <a href="https://www.linkedin.com/in/scottlarribeau" target="_blank">
+        <img src="assets/iconmonstr-linkedin-4.svg" alt="Follow me on instagram">
+      </a>
 
-          <!-- https://iconmonstr.com/instagram-14-svg/ -->
-          <a href="https://www.instagram.com/slarribeau463" target="_blank">
-          <img src="assets/iconmonstr-instagram-14.svg" alt="Follow me on linked-in">
-          </a>
-          <div class="advert1">
-            <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=scottlarribea-20&marketplace=amazon&region=US&placement=B00008RW9U&asins=B00008RW9U&linkId=ec2a803818e73f1df3dbab2a8189b318&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
-            </iframe>
+      <!-- https://iconmonstr.com/instagram-14-svg/ -->
+      <a href="https://www.instagram.com/slarribeau463" target="_blank">
+        <img src="assets/iconmonstr-instagram-14.svg" alt="Follow me on linked-in">
+      </a>
+      <div class="advert1">
+        <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=scottlarribea-20&marketplace=amazon&region=US&placement=B00008RW9U&asins=B00008RW9U&linkId=ec2a803818e73f1df3dbab2a8189b318&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
+        </iframe>
 
-            <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=scottlarribea-20&marketplace=amazon&region=US&placement=B01DKCE4C4&asins=B01DKCE4C4&linkId=00ad10b1d76401b0852274f6ed5c1951&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
-            </iframe>
+        <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=scottlarribea-20&marketplace=amazon&region=US&placement=B01DKCE4C4&asins=B01DKCE4C4&linkId=00ad10b1d76401b0852274f6ed5c1951&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
+        </iframe>
 
-            <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=scottlarribea-20&marketplace=amazon&region=US&placement=B078WST5P8&asins=B078WST5P8&linkId=95e734cf1d6572a1be2dc8f52f5e1307&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
-            </iframe> 
+        <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=scottlarribea-20&marketplace=amazon&region=US&placement=B078WST5P8&asins=B078WST5P8&linkId=95e734cf1d6572a1be2dc8f52f5e1307&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
+        </iframe> 
 
-            <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=scottlarribea-20&marketplace=amazon&region=US&placement=B018UQ5AMS&asins=B018UQ5AMS&linkId=6ae9de59c51bad77d6dc7640bbecb781&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
-            </iframe> 
-          </div>
-          <div class="advert2"> 
-            <!-- possibly insert taboola click bait here -->
-            <!-- https://signup.taboola.com/join?utm_source=yahoo&utm_medium=cpc&utm_campaign=us_brand_straight&utm_content=9689143293_34183326949&utm_term=taboola&device=DESK -->
-            <h2>$$$ B</h2>
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <script>
+        <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=qf_sp_asin_til&ad_type=product_link&tracking_id=scottlarribea-20&marketplace=amazon&region=US&placement=B018UQ5AMS&asins=B018UQ5AMS&linkId=6ae9de59c51bad77d6dc7640bbecb781&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
+        </iframe> 
+      </div>
+        <div class="advert2"> 
+          <!-- possibly insert taboola click bait here -->
+          <!-- https://signup.taboola.com/join?utm_source=yahoo&utm_medium=cpc&utm_campaign=us_brand_straight&utm_content=9689143293_34183326949&utm_term=taboola&device=DESK -->
+          <h2>$$$ B</h2>
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <script>
             (adsbygoogle = window.adsbygoogle || []).push({
             google_ad_client: "ca-pub-8006192449813539",
             enable_page_level_ads: true
             });
-            </script>
-          </div>
+          </script>
+        </div>
     </div>      
   </body>
 </html>
