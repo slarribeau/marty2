@@ -14,6 +14,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormsModule } from '@angular/forms';
 import {DateUtilitiesService} from './date-utilities.service'
 import { FilterPipe} from './filter.pipe';
+import { DivisionFilterPipe} from './division.filter.pipe';
+
 
 
 
@@ -23,7 +25,8 @@ import { FilterPipe} from './filter.pipe';
     StandingsComponent,
     Test2Component,
     DateComponent,
-    FilterPipe
+    FilterPipe,
+    DivisionFilterPipe
   ],
   imports: [
    BrowserModule,

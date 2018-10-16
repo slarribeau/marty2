@@ -9,8 +9,10 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
 @Component({
   selector: 'app-test',
   template: `
-    {{param1}}
-    {{param2}}
+    {{league}}
+    {{division}}
+    {{date}}
+
     <table>
       <tr> 
         <th></th>
@@ -21,7 +23,9 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
         <th>GB</th>
 
       </tr>
-      <tr *ngFor="let standing of standings | filter:(param2)">
+      <!-- <tr *ngFor="let standing of standings | divisionFilter:(division) | filter:(date)">  -->
+      <tr *ngFor="let standing of standings | divisionFilter:(division) | filter:(date)">
+
         <td> 
           <img src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
         </td>
@@ -37,8 +41,9 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
 })
 export class StandingsComponent implements OnInit {
   public standings = [];
-  private param1;
-  private param2;
+  private league; //LEAGUE
+  private division; //DIVISION
+  private date; //DATE
 
 
   constructor(private _MlbRepoService: MlbRepoService, private route: ActivatedRoute) { 
@@ -48,13 +53,17 @@ export class StandingsComponent implements OnInit {
   ngOnInit() {
     console.log("StandingsComponent: ngOnInit");
     this.standings = this._MlbRepoService.getStandings();
-    console.log((this.route.snapshot.paramMap.get('id')));
+    console.log((this.route.snapshot.paramMap.get('league')));
+    console.log((this.route.snapshot.paramMap.get('division')));
     console.log((this.route.snapshot.paramMap.get('date')));
+
     this.route.paramMap.subscribe((params:ParamMap) => {
-      let id = params.get('id');
+      let league = params.get('league');
+      let division = params.get('division');
       let date = params.get('date');
-      this.param1 = id;
-      this.param2 = date;
+      this.league = league;
+      this.division = division;
+      this.date = date;
     });
 
   }

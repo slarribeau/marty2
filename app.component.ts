@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     //this.router.navigate([{ outlets: {
     //  sidebar: ['subscriptionss', '1', '2018-4-26']
     //}}]);
-    let x = '/subscriptions/1/'+date+'(sidebar:'+'subscriptionss/1/'+date+')';
+    let x = '/subscriptions/AL/EAST/'+date+'(sidebar:'+'subscriptionss/AL/EAST/'+date+')';
     console.log(x);
     this.router.navigateByUrl(x);
   }
