@@ -12,6 +12,8 @@ export class AppComponent implements OnInit {
   title = 'my-app';
   currentLeagueLeft;
   currentLeagueRight;
+  currentDivisionLeft;
+  currentDivisionRight;
 
 
   leagueChoices = [
@@ -25,11 +27,26 @@ export class AppComponent implements OnInit {
     }
  ];
 
+ divisionChoices = [
+  {
+    label: 'Eastern',
+    value: 'EAST'
+  }, 
+  {
+    label: 'Central',
+    value: 'CENT'
+  },
+  {
+    label: 'Western',
+    value: "WEST"
+  },
+];
   
   ngOnInit() {
-    this.currentLeagueLeft = this.leagueChoices[0].value
-    this.currentLeagueRight = this.leagueChoices[0].value
-
+    this.currentLeagueLeft = this.leagueChoices[0].value;
+    this.currentLeagueRight = this.leagueChoices[0].value;
+    this.currentDivisionLeft = this.divisionChoices[0].value
+    this.currentDivisionRight = this.divisionChoices[0].value
   }
   
 

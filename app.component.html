@@ -24,19 +24,27 @@
                 <option *ngFor="let league of leagueChoices" [value]="league.value">{{league.label}} </option>
               </select>
 
+              <select [(ngModel)]="currentDivisionLeft" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
+                  <option *ngFor="let division of divisionChoices" [value]="division.value">{{division.label}} </option>
+                </select>
+
               <router-outlet></router-outlet> 
         </div>
         </div>
         <div id="right">
       </div>
       <div id="content">
-
               <div id="menu"> 
                 </div>
 
               <select [(ngModel)]="currentLeagueRight" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
                   <option *ngFor="let league of leagueChoices" [value]="league.value">{{league.label}} </option>
               </select>
+
+              <select [(ngModel)]="currentDivisionRight" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
+                  <option *ngFor="let division of divisionChoices" [value]="division.value">{{division.label}} </option>
+                </select>
+
               <router-outlet name='sidebar'></router-outlet>
         </div>
         <div id="footer"> 
