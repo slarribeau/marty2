@@ -39,5 +39,9 @@ export class AppComponent implements OnInit {
     this.child.decr();
   }
 
+  myFunction() {
+    let x = document.getElementById("mySelect").nodeValue;
+    console.log(x);
+  }
 }
 

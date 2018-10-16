@@ -18,36 +18,22 @@
                   <app-date (childEvent)="processChildEvent($event)"></app-date>
                   <button class="right-button" (click)="incrDate()">+</button>
               </div>
-            <!-- <h2>menu</h2> -->
-            <ul class="menu-items">
-                <li class="menu-item" (click)="onSelect(division)" *ngFor="let division of divisions">
-                  {{division.menu}} 
-                </li>
-          </ul>
         </div>
         <div id="content">
-            AL: XXXX 
-               <router-outlet></router-outlet> 
-               <!-- <router-outlet></router-outlet> -->
-               <!-- <router-outlet name='child1'></router-outlet> -->
-
+            <select id="mySelect" onchange="myFunction()">
+                <option value="Audi">Audi
+                <option value="BMW">BMW
+                <option value="Mercedes">Mercedes
+                <option value="Volvo">Volvo
+             </select>
+              <router-outlet></router-outlet> 
         </div>
         </div>
         <div id="right">
           <div id="menu"> 
-
-
-          <ul class="menu-items">
-              <li class="menu-item" (click)="onSelect(division)" *ngFor="let division of divisions">
-                {{division.menu}} 
-              </li>
-        </ul>
       </div>
       <div id="content">
-          AL: XXXX 
               <router-outlet name='sidebar'></router-outlet>
-              <!-- <router-outlet ></router-outlet> -->
-
       </div>
         </div>
         <div id="footer"> 
