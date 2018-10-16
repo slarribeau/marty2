@@ -9,17 +9,18 @@
           <img src="assets/baseball-player-action-shot.jpg" alt="baseball action image">
           </a>
         </div>
-        <div id="left">
-          
-          <div id="menu"> 
 
-              <div class="date-picker">
-                  <button class="left-button" (click)="decrDate()">-</button>
-                  <app-date (childEvent)="processChildEvent($event)"></app-date>
-                  <button class="right-button" (click)="incrDate()">+</button>
-              </div>
+        <div id="menu"> 
+            <div class="date-picker-fmt">
+                <button class="left-button" (click)="decrDate()">-</button>
+                <app-date (childEvent)="processChildEvent($event)"></app-date>
+                <button class="right-button" (click)="incrDate()">+</button>
+            </div>
         </div>
-        <div id="content">
+
+
+        <div id="left">
+          <div class="content">
               <select [(ngModel)]="currentLeagueLeft" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
                 <option *ngFor="let league of leagueChoices" [value]="league.value">{{league.label}} </option>
               </select>
@@ -29,14 +30,11 @@
                 </select>
 
               <router-outlet></router-outlet> 
+           </div>
         </div>
-        </div>
-        <div id="right">
-      </div>
-      <div id="content">
-              <div id="menu"> 
-                </div>
 
+        <div id="right">
+          <div class="content">
               <select [(ngModel)]="currentLeagueRight" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
                   <option *ngFor="let league of leagueChoices" [value]="league.value">{{league.label}} </option>
               </select>
@@ -46,6 +44,7 @@
                 </select>
 
               <router-outlet name='sidebar'></router-outlet>
+          </div>
         </div>
         <div id="footer"> 
           <!-- https://iconmonstr.com/facebook-4-svg/ -->
