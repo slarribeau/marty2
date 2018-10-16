@@ -20,8 +20,8 @@
               </div>
         </div>
         <div id="content">
-              <select [(ngModel)]="brandFont" id="brandFontmenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
-                <option *ngFor="let font of fontChoices" [value]="font.value">{{font.label}} </option>
+              <select [(ngModel)]="currentLeague" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
+                <option *ngFor="let league of leagueChoices" [value]="league.value">{{league.label}} </option>
               </select>
               <router-outlet></router-outlet> 
         </div>

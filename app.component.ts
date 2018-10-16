@@ -10,22 +10,22 @@ import {DateComponent} from './date/date.component';
 })
 export class AppComponent implements OnInit {
   title = 'my-app';
-  brandFont;
+  currentLeague;
 
-  fontChoices = [
+  leagueChoices = [
     {
-      label: 'Trebuchet',
-      value: "'Trebuchet MS', 'Helvetica Neue', Arial, sans-serif"
+      label: 'American League',
+      value: "AL"
     },
     {
-      label: 'Georgia',
-      value: 'Georgia, times, serif'
+      label: 'National League',
+      value: 'NL'
     }
  ];
 
   
   ngOnInit() {
-    this.brandFont = this.fontChoices[0].value
+    this.currentLeague = this.leagueChoices[0].value
   }
   
 
@@ -53,11 +53,6 @@ export class AppComponent implements OnInit {
   decrDate(){
     console.log("dec function called");
     this.child.decr();
-  }
-
-  myFunction(y) {
-    let x = document.getElementById("mySelect");
-    console.log(event.target);
   }
 
   setStyle(e, which) {
