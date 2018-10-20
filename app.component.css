@@ -58,7 +58,7 @@ button.right-button {
   
 #menu {
   background-color: green;
-  height:240px;
+  height:60px;
 }
 
 .menu-items {
@@ -92,6 +92,13 @@ button.right-button {
   height:110px;
 }
   
+.center {
+  margin: auto;
+  width: 20%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
 #footer {
   background-color: grey;
   width:100%;
