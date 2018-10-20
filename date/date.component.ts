@@ -16,11 +16,10 @@ import {ViewEncapsulation} from '@angular/core'
   styles: [
     `
     #position-top {
+      /* This is needed so that the datepicker is near the top of its container div */
       top:-30px;
     }
 
-
-  
     .mat-form-field {
       float: left;
     }
