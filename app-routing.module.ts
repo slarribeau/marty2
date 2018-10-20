@@ -5,7 +5,7 @@ import {Test2Component} from './test2/test2.component';
 import { AppComponent } from './app.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/metrics', pathMatch: 'full'},
+  { path: '', redirectTo: '/subscriptions/AL/EAST/2018-4-26(sidebar:subscriptionss/AL/EAST/2018-4-26)', pathMatch: 'full'},
   { path: 'subscriptions', component: Test2Component },
   { path: 'subscriptions/:league/:division/:date', component: StandingsComponent},
   { path: 'subscriptionss/:league/:division/:date', component: StandingsComponent, outlet: 'sidebar' },
