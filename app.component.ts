@@ -78,10 +78,18 @@ export class AppComponent implements OnInit {
   }
 
   setStyle(e, which) {
+    let date = this.child.getDate()
+    let x = '/subscriptions/'+this.currentLeagueLeft+'/'+this.currentDivisionLeft+'/'+date;
+    x = x +'(sidebar:'+'subscriptionss/'+this.currentLeagueLeft+'/'+this.currentDivisionRight+'/'+date+')';
+    console.log(x);
+    this.router.navigateByUrl(x);
+  }
+/*
+  setStyle(e, which) {
     //document.documentElement.style.setProperty(which, e);
     console.log(which);
     console.log(e);
   }
-
+*/
 }
 

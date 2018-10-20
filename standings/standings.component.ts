@@ -63,7 +63,7 @@ export class StandingsComponent implements OnInit {
       let date = params.get('date');
       this.league = league;
       //this.division = division; //Mysterious bug? Not set on left instantation ???
-      this.division = 'EAST';
+      this.division = division;
 
       this.date = date;
     });

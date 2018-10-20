@@ -61,6 +61,10 @@ export class DateComponent implements OnInit {
     this.childEvent.emit(dateString);
   }
 
+  getDate() {
+    return this.dateUtil.dateObject2String(this.myDateObject);
+  }
+
   sendEvent(event){ 
     console.log("Date.component: send event received: " + event.value)
     let dateString = this.dateUtil.dateObject2String(event.value);
