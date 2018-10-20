@@ -6,7 +6,6 @@ div {
   overflow:hidden;
 }
 
-
 body {
   font-family: Arial, monospace;
 }
@@ -29,18 +28,17 @@ table {
   margin-right: auto;
 }
 
-
 button.left-button {
   float:left;
   position:relative;
-  top:35px; 
+  top:15px; 
   left:-5px;
 }
 
 button.right-button {
   float:left;
   position:relative;
-  top: 20px;
+  top: 0px;
   left:3px;
 }
 
@@ -60,7 +58,7 @@ button.right-button {
   
 #menu {
   background-color: green;
-  height:75px;
+  height:240px;
 }
 
 .menu-items {
@@ -76,15 +74,9 @@ button.right-button {
   text-decoration: underline;
 }
 
-.date-picker-fmt {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-  
 .content {
   background-color: orange;
-  height:275px;
+  height:200px;
 }
   
 #right {
