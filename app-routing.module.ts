@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import {StandingsComponent} from './standings/standings.component';
 import {Test2Component} from './test2/test2.component';
 import { AppComponent } from './app.component';
-//import {AppComponent} from './app.component'
-
 
 export const routes: Routes = [
   { path: '', redirectTo: '/metrics', pathMatch: 'full'},
@@ -21,10 +19,5 @@ export const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-
-
-//+  declarations: [/* Test2Component */],
-//+  imports: [/* RouterModule.forRoot(routes) */],
-//+  exports: [RouterModule, routes /* routes */],
 
 export class AppRoutingModule { }
