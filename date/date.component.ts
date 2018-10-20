@@ -6,7 +6,7 @@ import {ViewEncapsulation} from '@angular/core'
   selector: 'app-date',
   template: `
     <p>
-          <mat-form-field id="this-feels-hacky-and-wrong">
+          <mat-form-field id="position-top">
           <input class="myDatePicker" matInput [matDatepicker]="picker" [(ngModel)]="myDateObject"  (dateChange)="sendEvent($event)" placeholder="">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker>  </mat-datepicker>
@@ -15,21 +15,17 @@ import {ViewEncapsulation} from '@angular/core'
   `,
   styles: [
     `
-    #this-feels-hacky-and-wrong {
+    #position-top {
       top:-30px;
     }
 
-    .mat-form-field-wrapper {
-      padding-bottom: 0.25em;
-    }
+
   
     .mat-form-field {
       float: left;
-      /*bottom: 16px; */
-      /* left: 10px; */
     }
 
-    /* Clear floats (clearfix hack) */
+    /* Clear floats (clearfix hack) - This is needed so the right button is next to datepicker */
     .mat-form-field:after {
       content: "";
       clear: both;
