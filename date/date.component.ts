@@ -42,7 +42,7 @@ export class DateComponent implements OnInit {
   ngOnInit() {
     //Note that "myDateObject" is presented in the DatePicker Component's HTML
     //this.myDateObject=this.dateUtil.getPrevDayObject(new Date());
-    this.myDateObject = new Date(2018, 3, 26);
+    this.myDateObject = new Date(2018, 8, 30);
 
     console.log("Date.component: ngOnInit" + this.myDateObject)
   }
