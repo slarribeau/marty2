@@ -66,3 +66,4 @@ ng serve --open
 
 
 12) Move styles.css to src directory 
+13) Copy assets to src/assets -- These are needed when you use "ng build --prod" to build the dist file.
