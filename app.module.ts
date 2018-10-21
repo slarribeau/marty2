@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import {DateUtilitiesService} from './date-utilities.service'
 import { FilterPipe} from './filter.pipe';
 import { DivisionFilterPipe} from './division.filter.pipe';
+import { LeagueFilterPipe} from './league.filter.pipe';
 
 
 
@@ -26,7 +27,8 @@ import { DivisionFilterPipe} from './division.filter.pipe';
     Test2Component,
     DateComponent,
     FilterPipe,
-    DivisionFilterPipe
+    DivisionFilterPipe,
+    LeagueFilterPipe
   ],
   imports: [
    BrowserModule,

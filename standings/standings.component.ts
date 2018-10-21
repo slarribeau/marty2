@@ -24,7 +24,7 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
 
       </tr>
       <!-- <tr *ngFor="let standing of standings | divisionFilter:(division) | filter:(date)">  -->
-      <tr *ngFor="let standing of standings | divisionFilter:(division) | filter:(date)">
+      <tr *ngFor="let standing of standings | leagueFilter:(league) | divisionFilter:(division) | filter:(date)">
 
         <td> 
           <img src="../assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
