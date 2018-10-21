@@ -41,9 +41,9 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
 })
 export class StandingsComponent implements OnInit {
   public standings = [];
-  private league; //LEAGUE
-  private division; //DIVISION
-  private date; //DATE
+  public league; //LEAGUE
+  public division; //DIVISION
+  public date; //DATE
 
 
   constructor(private _MlbRepoService: MlbRepoService, private route: ActivatedRoute) { 
