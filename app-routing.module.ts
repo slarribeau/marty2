@@ -5,10 +5,10 @@ import {Test2Component} from './test2/test2.component';
 import { AppComponent } from './app.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/subscriptions/AL/EAST/2018-9-30(sidebar:subscriptionss/AL/EAST/2018-9-30)', pathMatch: 'full'},
-  { path: 'subscriptions', component: Test2Component },
-  { path: 'subscriptions/:league/:division/:date', component: StandingsComponent},
-  { path: 'subscriptionss/:league/:division/:date', component: StandingsComponent, outlet: 'sidebar' },
+  { path: '', redirectTo: '/left/AL/EAST/2018-9-30(sidebar:right/AL/EAST/2018-9-30)', pathMatch: 'full'},
+  { path: 'left', component: Test2Component },
+  { path: 'left/:league/:division/:date', component: StandingsComponent},
+  { path: 'right/:league/:division/:date', component: StandingsComponent, outlet: 'sidebar' },
   { path: 'metrics', component: Test2Component},
   { path: '**', component: Test2Component }
 ];

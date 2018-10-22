@@ -57,12 +57,12 @@ export class AppComponent implements OnInit {
 
   processChildEvent(date) {
     console.log("processChildEvent " + date);
-    //this.router.navigateByUrl('/subscriptions/1/'+date);
+    //this.router.navigateByUrl('/left/1/'+date);
     //this.router.navigate([{ outlets: {
-    //  sidebar: ['subscriptionss', '1', '2018-4-26']
+    //  sidebar: ['right', '1', '2018-4-26']
     //}}]);
-    let x = '/subscriptions/'+this.currentLeagueLeft+'/'+this.currentDivisionLeft+'/'+date;
-    x = x +'(sidebar:'+'subscriptionss/'+this.currentLeagueRight+'/'+this.currentDivisionRight+'/'+date+')';
+    let x = '/left/'+this.currentLeagueLeft+'/'+this.currentDivisionLeft+'/'+date;
+    x = x +'(sidebar:'+'right/'+this.currentLeagueRight+'/'+this.currentDivisionRight+'/'+date+')';
     console.log(x);
     this.router.navigateByUrl(x);
   }
@@ -79,8 +79,8 @@ export class AppComponent implements OnInit {
 
   setStyle(e, which) {
     let date = this.child.getDate()
-    let x = '/subscriptions/'+this.currentLeagueLeft+'/'+this.currentDivisionLeft+'/'+date;
-    x = x +'(sidebar:'+'subscriptionss/'+this.currentLeagueRight+'/'+this.currentDivisionRight+'/'+date+')';
+    let x = '/left/'+this.currentLeagueLeft+'/'+this.currentDivisionLeft+'/'+date;
+    x = x +'(sidebar:'+'right/'+this.currentLeagueRight+'/'+this.currentDivisionRight+'/'+date+')';
     console.log(e);
     console.log(x);
     this.router.navigateByUrl(x);
