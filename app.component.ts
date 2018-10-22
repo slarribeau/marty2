@@ -62,7 +62,7 @@ export class AppComponent implements OnInit {
     //  sidebar: ['subscriptionss', '1', '2018-4-26']
     //}}]);
     let x = '/subscriptions/'+this.currentLeagueLeft+'/'+this.currentDivisionLeft+'/'+date;
-    x = x +'(sidebar:'+'subscriptionss/'+this.currentLeagueLeft+'/'+this.currentDivisionRight+'/'+date+')';
+    x = x +'(sidebar:'+'subscriptionss/'+this.currentLeagueRight+'/'+this.currentDivisionRight+'/'+date+')';
     console.log(x);
     this.router.navigateByUrl(x);
   }
@@ -81,6 +81,7 @@ export class AppComponent implements OnInit {
     let date = this.child.getDate()
     let x = '/subscriptions/'+this.currentLeagueLeft+'/'+this.currentDivisionLeft+'/'+date;
     x = x +'(sidebar:'+'subscriptionss/'+this.currentLeagueRight+'/'+this.currentDivisionRight+'/'+date+')';
+    console.log(e);
     console.log(x);
     this.router.navigateByUrl(x);
   }
