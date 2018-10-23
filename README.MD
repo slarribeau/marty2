@@ -68,7 +68,7 @@ ng serve --open
 12) Move styles.css to src directory 
 13) Copy assets to src/assets -- These are needed when you use "ng build --prod" to build the dist file.
 
-14) ng serve --open --base-href '/bak/'
+14) ng serve --open --base-href '/angular/'
 This is needed to match the href setting in index.html
 
 <!doctype html>
@@ -76,7 +76,7 @@ This is needed to match the href setting in index.html
 <head>
   <meta charset="utf-8">
   <title>Baseball 2018</title>
-  <base href="/bak/">
+  <base href="/angular/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -87,12 +87,12 @@ This is needed to match the href setting in index.html
 </html>
 
 15) Production builds:
-ng build --prod --base-href /bak/ --deploy-url /bak/
+ng build --prod --base-href /angular/ --deploy-url /angular/
 
 tar -cvf ~/output409.tar -C ../../dist/marty6/ .
 scp -r -i /Users/scottlarribeau/.ssh/gce ~/output409.tar slarribeau@35.197.78.56:/home/slarribeau
 
-tar -xvf output409.tar -C /var/www/html/bak
+tar -xvf output409.tar -C /var/www/html/angular
 
 16) nginx config file:
 sudo systemctl restart nginx
@@ -126,8 +126,8 @@ server {
 	        try_files $uri $uri/ =404;
 	}
 
-	location /bak/ {
-		#alias /var/www/html/bak/;
+	location /angular/ {
+		#alias /var/www/html/angular/;
 		root /var/www/html;
 		#Angular requires everything default to index.html
 		try_files $uri $uri/ /index.html;
