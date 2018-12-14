@@ -6,7 +6,7 @@ import {ViewEncapsulation} from '@angular/core'
   selector: 'app-date',
   template: `
     <p>
-          <mat-form-field id="position-top">
+          <mat-form-field style="color:grey" id="position-top">
           <input class="myDatePicker" matInput [matDatepicker]="picker" [(ngModel)]="myDateObject"  (dateChange)="sendEvent($event)" placeholder="">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker>  </mat-datepicker>

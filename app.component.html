@@ -14,7 +14,7 @@
     <div id="menu"> 
       <div  id="center_the_menu">
         <button class="left-button" (click)="decrDate()">-</button>
-        <app-date style="border:green" (childEvent)="processChildEvent($event)"></app-date>
+        <app-date (childEvent)="processChildEvent($event)"></app-date>
         <button class="right-button" (click)="incrDate()">+</button>
       </div>
     </div>
