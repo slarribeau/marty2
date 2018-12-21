@@ -77,6 +77,17 @@ export class AppComponent implements OnInit {
     this.child.decr();
   }
 
+  seasonStartDate(){
+    //Season starts on Mar 29
+    //Fence post error?
+    this.child.setDate2("2018-03-30");
+  }
+
+  seasonEndDate(){
+    this.child.setDate2("2018-09-29");
+  }
+
+
   setStyle(e, which) {
     let date = this.child.getDate()
     let x = '/left/'+this.currentLeagueLeft+'/'+this.currentDivisionLeft+'/'+date;

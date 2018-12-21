@@ -69,10 +69,10 @@ table {
 #center_the_menu {
   /* margin: auto; True Center */
   margin: 0 0 0 33%; /* Skewed center */
-  width: 25%;
+  width: 35%;
   padding: 0px; 
   text-align: center; /* children will be centered */
-  /* border: 3px solid purple; */
+   border: 3px solid purple; 
 }
 
 #center_the_datepicker {
