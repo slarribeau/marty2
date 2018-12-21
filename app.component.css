@@ -94,18 +94,19 @@ button {
 #left {
   float: left;
   width: 43%;
-  /* border: 3px solid red; */
+  border: 1px solid black; 
 }
     
 #center {
   float: left;
   width: 43%;
+  border: 1px solid black; 
 } 
 
 #right {
   float: left;
   width: 14%;
-  /* border: 3px solid red; */
+  border: 1px solid black; 
 }
 
 .standings {
