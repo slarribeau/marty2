@@ -13,15 +13,15 @@
 
     <div id="menu"> 
       <div  id="center_the_menu">
-        <div id="left-button">
+        <span id="left-button">
           <button  (click)="seasonStartDate()">Season Start</button>
           <button  (click)="decrDate()">-</button>
-        </div>
+        </span>
         <app-date class="center_the_datepicker" (childEvent)="processChildEvent($event)"></app-date> 
-        <div id="right-button"> 
+        <span id="right-button"> 
           <button  (click)="incrDate()">+</button>
           <button  (click)="seasonEndDate()">Season End</button>
-       </div>
+        </span>
       </div>
     </div>
 

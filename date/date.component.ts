@@ -61,17 +61,10 @@ export class DateComponent implements OnInit {
     this.childEvent.emit(dateString);
   }
 
-  setDate2(date) {
-    console.log("set date")
-    console.log(date)
-    console.log("set date2")
+  setDate(date) {
     this.myDateObject = new Date(date);
-    console.log(this.myDateObject)
-
     let dateString = this.dateUtil.dateObject2String(this.myDateObject);
-    console.log("000")
     console.log(dateString);
-    console.log("111")
     this.childEvent.emit(dateString);
   }
 
@@ -85,5 +78,4 @@ export class DateComponent implements OnInit {
     console.log("Date.component: about to emit" + dateString);
     this.childEvent.emit(dateString);
   }
-
 }

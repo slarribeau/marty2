@@ -80,11 +80,13 @@ export class AppComponent implements OnInit {
   seasonStartDate(){
     //Season starts on Mar 29
     //Fence post error?
-    this.child.setDate2("2018-03-30");
+    this.child.setDate("2018-03-30");
   }
 
   seasonEndDate(){
-    this.child.setDate2("2018-09-29");
+    //Season ends on Sept 30
+    //Fence post error?
+    this.child.setDate("2018-09-31");
   }
 
 
