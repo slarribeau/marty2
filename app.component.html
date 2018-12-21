@@ -13,9 +13,13 @@
 
     <div id="menu"> 
       <div  id="center_the_menu">
-        <button class="left-button" (click)="decrDate()">-</button>
-        <app-date (childEvent)="processChildEvent($event)"></app-date>
-        <button class="right-button" (click)="incrDate()">+</button>
+        <div id="left-button">
+          <button  (click)="decrDate()">-</button>
+        </div>
+        <app-date class="center_the_datepicker" (childEvent)="processChildEvent($event)"></app-date> 
+        <div id="right-button"> 
+          <button  (click)="incrDate()">+</button>
+       </div>
       </div>
     </div>
 

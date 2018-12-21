@@ -21,6 +21,9 @@ cd marty
 ng test
 
 ng serve --open
+or
+ng serve --open --base-href '/angular/'
+
 
 
 
@@ -63,6 +66,8 @@ ng test
 
 11) run app itself
 ng serve --open
+or
+ng serve --open --base-href '/angular/'
 
 
 12) Move styles.css to src directory 
