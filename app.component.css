@@ -183,22 +183,31 @@ button {
   /* border: 1px solid green; */
 }
 
-@media only screen and (max-width:500px) {
-  /* For mobile phones: */
-  #left, #center, #right {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width:1000px) {
-  /* For mobile phones: */
+/* For mobile phones: */
+@media only screen and (max-width:478) {
   #menu {
     height: 200px;
   }
-  #center_the_menu {
-    float: left;
-    position: relative;
-    border: 3px solid white; 
+}
 
+@media only screen and (max-width:800px) {
+  /* At 800 px we start to lose data in standings columns*/
+  #left, #center, #right {
+    width: 100%;
+  }
+  #menu {
+    border: 1px solid yellow; 
+  }
+  #center_the_menu {
+
+    border: 1px solid white; 
+  }
+}
+
+/* For mobile phones: */
+@media only screen and (max-width:500px) {
+  #menu {
+    height: 100px;
+    border: 1px solid green; 
   }
 }
