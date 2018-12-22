@@ -9,10 +9,6 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
 @Component({
   selector: 'app-test',
   template: `
-    {{league}}
-    {{division}}
-    {{date}}
-
     <table>
       <tr> 
         <th></th>
