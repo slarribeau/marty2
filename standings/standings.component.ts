@@ -33,7 +33,41 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
       </tr>
     </table>
   `,
-  styleUrls:['../app.component.css']
+  styles:[
+    `
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background-color: #0097a7ff; /* clr 2 header */
+      border: 1px solid #ddd;
+      padding: 8px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      color: white;
+    }
+    
+    tr:nth-child(even) {
+      background-color: rgba(250, 217, 179, 0.856); /* clr 2 odd row */
+    }  
+    
+    tr:hover {
+      background-color: #ddd;
+    }
+    
+    tr {
+      background-color: rgba(250, 217, 179, 0.856); /* clr 2 even row */
+    }
+    
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    `
+  ]
 })
 export class StandingsComponent implements OnInit {
   public standings = [];

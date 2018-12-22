@@ -15,42 +15,42 @@ body {
   font-family: Helvetica;
 }
 
-td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-th {
-  background-color: #0097a7ff; /* clr 2 header */
-  border: 1px solid #ddd;
-  padding: 8px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  color: white;
-}
-
-tr:nth-child(even) {
-  background-color: rgba(250, 217, 179, 0.856); /* clr 2 odd row */
-}  
-
-tr:hover {
-  background-color: #ddd;
-}
-
-tr {
-  background-color: rgba(250, 217, 179, 0.856); /* clr 2 even row */
-}
-
-table {
-  margin: 0 auto;
-  border-collapse: collapse;
-  width: 100%;
-}
-
 .banner {
   width: 100%;
   height: auto;
   background-color: black;
+}
+
+.middle {
+  width:100%;
+
+  border: 1px solid white; 
+}
+
+.menu {
+  background-color: black; /*clr 2 menu */
+  height:40px;
+  height:240px;
+
+  border: 1px solid blue; 
+}
+
+.center_the_menu {
+  position: relative;
+  margin: auto; /* True Center */
+  /* margin: 0 0 0 26%; /* Skewed center */
+  text-align: center;
+
+  width:100%;
+  padding: 0px; 
+  border: 1px solid purple; 
+}
+
+.left-button {
+  /* float:left; */
+  /* position:relative; */
+  padding: 5px; 
+  border: 1px solid green;
 }
 
 button {
@@ -59,21 +59,27 @@ button {
   margin: 2px;
 }
 
+
+.center_the_datepicker {
+  /* float:left; */ 
+  /*
+  width:80%;
+  width:50%;
+  */
+  border: 3px solid white; 
+}
+
+.right-button {
+  /* float:left; */
+  /* position:relative; */
+  padding: 5px; 
+  top: -15px;
+  border: 1px solid green; 
+}
+
 .left {
   float: left;
   width: 43%;
-  border: 1px solid black; 
-}
-    
-.center {
-  float: left;
-  width: 43%;
-  border: 1px solid black; 
-} 
-
-.right {
-  float: left;
-  width: 14%;
   border: 1px solid black; 
 }
 
@@ -97,14 +103,16 @@ button {
   /* border: 3px solid green; */
 }
 
-.select_box_a {
-  width:50%;
+.center {
   float: left;
-}
+  width: 43%;
+  border: 1px solid black; 
+} 
 
-.select_box_b {
-  width:50%;
-  float: right;
+.right {
+  float: left;
+  width: 14%;
+  border: 1px solid black; 
 }
 
 .advert1 {
@@ -148,20 +156,7 @@ button {
   margin:0px 10px 0px 10px;
 }
 
-.left-button {
-  /* float:left; */
-  /* position:relative; */
-  padding: 5px; 
-  border: 1px solid green;
-}
 
-.right-button {
-  /* float:left; */
-  /* position:relative; */
-  padding: 5px; 
-  top: -15px;
-  border: 1px solid green; 
-}
 
 @media only screen and (max-width:800px) {
   /* At 800 px we start to lose data in standings columns*/
@@ -185,39 +180,3 @@ button {
   }
 }
 
-.middle {
-  width:100%;
-  border: 1px solid white; 
-
-  padding:0px;
-}
-
-.menu {
-  background-color: black; /*clr 2 menu */
-  height:40px;
-  height:240px;
-
-  border: 1px solid blue; 
-
-  padding:0px;
-}
-
-.center_the_menu {
-  position: relative;
-  margin: auto; /* True Center */
-  /* margin: 0 0 0 26%; /* Skewed center */
-  text-align: center;
-
-  width:100%;
-  padding: 0px; 
-  border: 1px solid purple; 
-}
-
-.center_the_datepicker {
-  /* float:left; */ 
-  /*
-  width:80%;
-  width:50%;
-  */
-  border: 3px solid white; 
-}
