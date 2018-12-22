@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
   currentLeagueRight;
   currentDivisionLeft;
   currentDivisionRight;
+  endOfSeason;
+  startOfSeason;
 
 
   leagueChoices = [
@@ -47,6 +49,13 @@ export class AppComponent implements OnInit {
     this.currentLeagueRight = this.leagueChoices[0].value;
     this.currentDivisionLeft = this.divisionChoices[0].value
     this.currentDivisionRight = this.divisionChoices[0].value
+    //Season starts on Mar 29
+    //Fence post error?
+    this.startOfSeason = new Date("2018-03-30");
+
+    //Season ends on Sept 30
+    //Fence post error?
+    this.endOfSeason = new Date("2018-09-31");
   }
   
 
@@ -69,24 +78,20 @@ export class AppComponent implements OnInit {
 
   incrDate(){
     console.log("inc function called");
-    this.child.incr();
+    this.child.incr(this.endOfSeason);
   }
 
   decrDate(){
     console.log("dec function called");
-    this.child.decr();
+    this.child.decr(this.startOfSeason);
   }
 
   seasonStartDate(){
-    //Season starts on Mar 29
-    //Fence post error?
-    this.child.setDate("2018-03-30");
+    this.child.setDate(this.startOfSeason);
   }
 
   seasonEndDate(){
-    //Season ends on Sept 30
-    //Fence post error?
-    this.child.setDate("2018-09-31");
+    this.child.setDate(this.endOfSeason);
   }
 
 

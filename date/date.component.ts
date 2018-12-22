@@ -43,22 +43,29 @@ export class DateComponent implements OnInit {
     //Note that "myDateObject" is presented in the DatePicker Component's HTML
     //this.myDateObject=this.dateUtil.getPrevDayObject(new Date());
     this.myDateObject = new Date(2018, 8, 30);
-
     console.log("Date.component: ngOnInit" + this.myDateObject)
   }
 
-  decr() {
-    this.myDateObject=this.dateUtil.getPrevDayObject(this.myDateObject);
-    let dateString = this.dateUtil.dateObject2String(this.myDateObject);
-    console.log("Date.component: about to emit" + dateString);
-    this.childEvent.emit(dateString);
+  decr(edge) {
+    let myDateObjectTmp=this.dateUtil.getPrevDayObject(this.myDateObject);
+
+    if (myDateObjectTmp >= edge) { //Don't decrement past beg of season.
+      this.myDateObject=myDateObjectTmp;
+      let dateString = this.dateUtil.dateObject2String(this.myDateObject);
+      console.log("Date.component: about to emit" + dateString);
+      this.childEvent.emit(dateString);
+    }
   }
 
-  incr() {
-    this.myDateObject=this.dateUtil.getNextDayObject(this.myDateObject);
-    let dateString = this.dateUtil.dateObject2String(this.myDateObject);
-    console.log("Date.component: about to emit" + dateString);
-    this.childEvent.emit(dateString);
+  incr(edge) {
+    let myDateObjectTmp=this.dateUtil.getNextDayObject(this.myDateObject);
+
+    if (myDateObjectTmp <= edge) { //Dont increment past end of season.
+      this.myDateObject = myDateObjectTmp;
+      let dateString = this.dateUtil.dateObject2String(this.myDateObject);
+      console.log("Date.component: about to emit" + dateString);
+      this.childEvent.emit(dateString);
+    }
   }
 
   setDate(date) {
