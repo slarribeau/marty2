@@ -54,20 +54,8 @@ table {
   height: auto;
   background-color: black;
 }
+/* menu and center the menu go here */
 
-#menu {
-  background-color: black; /*clr 2 menu */
-  height:40px;
-  /* border: 3px solid blue; */
-}
-
-#center_the_menu {
-  margin: auto; /* True Center */
-  /* margin: 0 0 0 26%; /* Skewed center */
-  width: 460px;
-  padding: 0px; 
-  border: 3px solid purple; 
-}
 
 #center_the_datepicker {
   float:left;
@@ -183,11 +171,19 @@ button {
   /* border: 1px solid green; */
 }
 
-/* For mobile phones: */
-@media only screen and (max-width:478) {
-  #menu {
-    height: 200px;
-  }
+
+#menu {
+  background-color: black; /*clr 2 menu */
+  height:40px;
+  /* border: 3px solid blue; */
+}
+
+#center_the_menu {
+  margin: auto; /* True Center */
+  /* margin: 0 0 0 26%; /* Skewed center */
+  width: 500px;
+  padding: 0px; 
+  border: 3px solid purple; 
 }
 
 @media only screen and (max-width:800px) {
@@ -197,9 +193,9 @@ button {
   }
   #menu {
     border: 1px solid yellow; 
+    height: 100px;
   }
   #center_the_menu {
-
     border: 1px solid white; 
   }
 }
