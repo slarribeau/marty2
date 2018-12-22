@@ -47,7 +47,7 @@ table {
   width: 100%;
 }
 
-#banner {
+.banner {
   width: 100%;
   height: auto;
   background-color: black;
@@ -59,24 +59,19 @@ button {
   margin: 2px;
 }
 
-#date {
-  margin: 0px 3px 0px 3px; 
-  background-color: rgb(205, 207, 207);
-}
-
-#left {
+.left {
   float: left;
   width: 43%;
   border: 1px solid black; 
 }
     
-#center {
+.center {
   float: left;
   width: 43%;
   border: 1px solid black; 
 } 
 
-#right {
+.right {
   float: left;
   width: 14%;
   border: 1px solid black; 
@@ -134,14 +129,14 @@ button {
   height:110px;
 }
   
-#footer {
+.footer {
   background-color: black; /*clr 2 menu */
   width:100%;
   height:32px;
   clear:both;
 }
 
-#social_icons {
+.social_icons {
   /* margin: auto; True Center */
   margin: 0 0 0 28%; /* Skewed center */
   width:30%;
@@ -153,14 +148,14 @@ button {
   margin:0px 10px 0px 10px;
 }
 
-#left-button {
+.left-button {
   /* float:left; */
   /* position:relative; */
   padding: 5px; 
   border: 1px solid green;
 }
 
-#right-button {
+.right-button {
   /* float:left; */
   /* position:relative; */
   padding: 5px; 
@@ -170,34 +165,34 @@ button {
 
 @media only screen and (max-width:800px) {
   /* At 800 px we start to lose data in standings columns*/
-  #left, #center, #right {
+  .left, .center, .right {
     width: 100%;
   }
-  #menu {
+  .menu {
     border: 1px solid yellow; 
     height: 100px;
   }
-  #center_the_menu {
+  .center_the_menu {
     border: 1px solid white; 
   }
 }
 
 /* For mobile phones: */
 @media only screen and (max-width:500px) {
-  #menu {
+  .menu {
     height: 100px;
     border: 1px solid green; 
   }
 }
 
-#middle {
+.middle {
   width:100%;
   border: 1px solid white; 
 
   padding:0px;
 }
 
-#menu {
+.menu {
   background-color: black; /*clr 2 menu */
   height:40px;
   height:240px;
@@ -207,7 +202,7 @@ button {
   padding:0px;
 }
 
-#center_the_menu {
+.center_the_menu {
   position: relative;
   margin: auto; /* True Center */
   /* margin: 0 0 0 26%; /* Skewed center */
@@ -218,7 +213,7 @@ button {
   border: 1px solid purple; 
 }
 
-#center_the_datepicker {
+.center_the_datepicker {
   /* float:left; */ 
   /*
   width:80%;
