@@ -11,18 +11,22 @@
         <img src="assets/baseball-player-action-shot.jpg" style="width:100%" alt="baseball action image">
       </a>
     </div>
-
-    <div id="menu"> 
-      <div  id="center_the_menu">
-        <span id="left-button">
-          <button  (click)="seasonStartDate()">Season Start</button>
-          <button  (click)="decrDate()">-</button>
-        </span>
-        <app-date class="center_the_datepicker" (childEvent)="processChildEvent($event)"></app-date>
-        <span id="right-button"> 
-          <button  (click)="incrDate()">+</button>
-          <button  (click)="seasonEndDate()">Season End</button>
-        </span>
+    <div id="middle">
+      <div id="menu"> 
+        <div  id="center_the_menu">
+          <span id="left-button">
+            <button  (click)="seasonStartDate()">Season Start</button>
+            <button  (click)="decrDate()">-</button>
+          </span>  
+          <span id="center_the_datepicker">
+              <button  (click)="decrDate()">-</button>
+           <!-- <app-date (childEvent)="processChildEvent($event)"></app-date> -->
+          </span>
+            <span id="right-button"> 
+            <button  (click)="incrDate()">+</button>
+            <button  (click)="seasonEndDate()">Season End</button>
+          </span>
+        </div>
       </div>
     </div>
 

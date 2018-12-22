@@ -5,9 +5,7 @@
     padding: 0px; 
     /* overflow:hidden; */
     overflow:hidden; 
-
   }
-
 
 * {
   box-sizing: border-box;
@@ -54,13 +52,6 @@ table {
   height: auto;
   background-color: black;
 }
-/* menu and center the menu go here */
-
-
-#center_the_datepicker {
-  float:left;
-  width:80%;
-}
 
 button {
   background-color: rgb(205, 207, 207);
@@ -98,15 +89,19 @@ button {
 }
 
 .center_the_standings {
-  margin: auto;
+  position: relative;  /* keeps elements in parent */
+  margin: auto;        /* ensures center on x axis */
+  text-align: center;  /* children will be centered */
+
+  top: 50%;                      /* ensures center on y axis */
+  transform: translateY(-50%);   /* ensures center on y axis */
+
   width: 85%;
   padding: 10px; 
-  text-align: center; /* children will be centered */
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+
   /* border: 3px solid green; */
 }
+
 .select_box_a {
   width:50%;
   float: left;
@@ -124,13 +119,15 @@ button {
 }
 
 .center_the_advert {
-  text-align: center; /* children will be centered */
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);  
+  position: relative;  /* keeps elements in parent */
+  margin: auto;        /* ensures center on x axis */
+  text-align: center;  /* children will be centered */
+
+  top: 50%;                     /* ensures center on y axis */
+  transform: translateY(-50%);  /* ensures center on y axis */
+
   /* border: 3px solid green; */
 }
-
 
 .advert2{
   background-color: brown;
@@ -157,33 +154,18 @@ button {
 }
 
 #left-button {
-  float:left;
-  position:relative;
+  /* float:left; */
+  /* position:relative; */
   padding: 5px; 
-  /* border: 1px solid green; */
+  border: 1px solid green;
 }
 
 #right-button {
-  float:left;
-  position:relative;
+  /* float:left; */
+  /* position:relative; */
   padding: 5px; 
   top: -15px;
-  /* border: 1px solid green; */
-}
-
-
-#menu {
-  background-color: black; /*clr 2 menu */
-  height:40px;
-  /* border: 3px solid blue; */
-}
-
-#center_the_menu {
-  margin: auto; /* True Center */
-  /* margin: 0 0 0 26%; /* Skewed center */
-  width: 40%;
-  padding: 0px; 
-  border: 3px solid purple; 
+  border: 1px solid green; 
 }
 
 @media only screen and (max-width:800px) {
@@ -206,4 +188,41 @@ button {
     height: 100px;
     border: 1px solid green; 
   }
+}
+
+#middle {
+  width:100%;
+  border: 1px solid white; 
+
+  padding:0px;
+}
+
+#menu {
+  background-color: black; /*clr 2 menu */
+  height:40px;
+  height:240px;
+
+  border: 1px solid blue; 
+
+  padding:0px;
+}
+
+#center_the_menu {
+  position: relative;
+  margin: auto; /* True Center */
+  /* margin: 0 0 0 26%; /* Skewed center */
+  text-align: center;
+
+  width:100%;
+  padding: 0px; 
+  border: 1px solid purple; 
+}
+
+#center_the_datepicker {
+  /* float:left; */ 
+  /*
+  width:80%;
+  width:50%;
+  */
+  border: 3px solid white; 
 }
