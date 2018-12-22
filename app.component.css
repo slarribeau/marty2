@@ -62,12 +62,11 @@ table {
 }
 
 #center_the_menu {
-  /* margin: auto; True Center */
-  margin: 0 0 0 26%; /* Skewed center */
-  width: 40%;
+  margin: auto; /* True Center */
+  /* margin: 0 0 0 26%; /* Skewed center */
+  width: 460px;
   padding: 0px; 
-  text-align: center; /* children will be centered */
-  /* border: 3px solid purple; */
+  border: 3px solid purple; 
 }
 
 #center_the_datepicker {
@@ -173,7 +172,6 @@ button {
   float:left;
   position:relative;
   padding: 5px; 
-  width: 25%;
   /* border: 1px solid green; */
 }
 
@@ -181,7 +179,6 @@ button {
   float:left;
   position:relative;
   padding: 5px; 
-  width: 23%;
   top: -15px;
   /* border: 1px solid green; */
 }
@@ -197,5 +194,11 @@ button {
   /* For mobile phones: */
   #menu {
     height: 200px;
+  }
+  #center_the_menu {
+    float: left;
+    position: relative;
+    border: 3px solid white; 
+
   }
 }
