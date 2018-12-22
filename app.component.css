@@ -185,3 +185,17 @@ button {
   top: -15px;
   /* border: 1px solid green; */
 }
+
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  #left, #center, #right {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width:1000px) {
+  /* For mobile phones: */
+  #menu {
+    height: 200px;
+  }
+}
