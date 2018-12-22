@@ -96,8 +96,9 @@ ng build --prod --base-href /angular/ --deploy-url /angular/
 
 tar -cvf ~/output409.tar -C ../../dist/marty6/ .
 scp -r -i /Users/scottlarribeau/.ssh/gce ~/output409.tar slarribeau@35.197.78.56:/home/slarribeau
-
-tar -xvf output409.tar -C /var/www/html/angular
+ssh -i ~/.ssh/gce 35.197.78.56 -l slarribeau
+  tar -xvf output409.tar -C /var/www/html/angular
+  sudo systemctl restart nginx
 
 16) nginx config file:
 sudo systemctl restart nginx
