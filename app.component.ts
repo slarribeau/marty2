@@ -49,16 +49,12 @@ export class AppComponent implements OnInit {
     this.currentLeagueRight = this.leagueChoices[0].value;
     this.currentDivisionLeft = this.divisionChoices[0].value
     this.currentDivisionRight = this.divisionChoices[0].value
-    //Season starts on Mar 29
-    //Fence post error?
-    this.startOfSeason = new Date("2018-03-30");
-
-    //Season ends on Sept 30
-    //Fence post error?
-    this.endOfSeason = new Date("2018-09-31");
+    //Be carefull passing strings to Date -- Safari is fussy
+    //https://stackoverflow.com/questions/4310953/invalid-date-in-safari
+    this.startOfSeason = new Date(2018, 2, 29);
+    this.endOfSeason = new Date(2018, 8, 30);;
   }
   
-
   constructor(private router: Router) { }
 
   @ViewChild(DateComponent) child: DateComponent;
@@ -103,12 +99,5 @@ export class AppComponent implements OnInit {
     console.log(x);
     this.router.navigateByUrl(x);
   }
-/*
-  setStyle(e, which) {
-    //document.documentElement.style.setProperty(which, e);
-    console.log(which);
-    console.log(e);
-  }
-*/
 }
 

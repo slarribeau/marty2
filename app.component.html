@@ -33,6 +33,9 @@
     <div class="left">
       <div class="standings">
         <div class="center_the_standings">
+          <div>
+             {{child.getDate()}}
+          </div>
           <select [(ngModel)]="currentLeagueLeft" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
             <option *ngFor="let league of leagueChoices" [value]="league.value">{{league.label}} </option>
           </select>
@@ -49,6 +52,9 @@
     <div class="center">
       <div class="standings">
         <div class="center_the_standings">
+          <div>
+            {{child.getDate()}}
+          </div>
           <select [(ngModel)]="currentLeagueRight" id="currentLeaguemenu"(ngModelChange)="setStyle($event,'--font-family-brand')">
             <option *ngFor="let league of leagueChoices" [value]="league.value">{{league.label}} </option>
           </select>
