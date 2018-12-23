@@ -13,26 +13,7 @@ import {ViewEncapsulation} from '@angular/core'
       </mat-form-field> 
     </p>
   `,
-  styles: [
-    `
-    #position-top {
-      /* This is needed so that the datepicker is near the top of its container div */
-      top:-30px;
-    }
-
-    .mat-form-field {
-      float: left;
-    }
-
-    /* Clear floats (clearfix hack) - This is needed so the right button is next to datepicker */
-    .mat-form-field:after {
-      content: "";
-      clear: both;
-      display: table;
-      border: 1px solid red;
-    }
-    `
-  ]
+  styleUrls: ['../app.component.css']
 })
 export class DateComponent implements OnInit {
   myDateObject: Date;
