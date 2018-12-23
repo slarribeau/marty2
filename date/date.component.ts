@@ -7,7 +7,13 @@ import {ViewEncapsulation} from '@angular/core'
   template: `
     <p>
           <mat-form-field style="color:grey" id="position-top">
-          <input class="myDatePicker" matInput [matDatepicker]="picker" [(ngModel)]="myDateObject"  (dateChange)="sendEvent($event)" placeholder="">
+          <input class="myDatePicker" 
+                 [min]="this.minDate"
+                 [max]="this.maxDate"
+                 matInput [matDatepicker]="picker" 
+                 [(ngModel)]="myDateObject"  
+                 (dateChange)="sendEvent($event)" 
+                 placeholder="Choose a date...">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker>  </mat-datepicker>
       </mat-form-field> 
@@ -17,6 +23,9 @@ import {ViewEncapsulation} from '@angular/core'
 })
 export class DateComponent implements OnInit {
   myDateObject: Date;
+  minDate: Date;
+  maxDate: Date;
+
   @Output() public childEvent = new EventEmitter();
   constructor(private dateUtil: DateUtilitiesService) { }
 
@@ -24,6 +33,8 @@ export class DateComponent implements OnInit {
     //Note that "myDateObject" is presented in the DatePicker Component's HTML
     //this.myDateObject=this.dateUtil.getPrevDayObject(new Date());
     this.myDateObject = new Date(2018, 8, 30);
+    this.minDate = new Date(2018,2,29);
+    this.maxDate = new Date(2018,8,30);
     console.log("Date.component: ngOnInit" + this.myDateObject)
   }
 
