@@ -41,14 +41,14 @@ body {
   /* margin: 0 0 0 26%; /* Skewed center */
   text-align: center;
 
-  width:100%;
+  width:500px;
   padding: 0px; 
   border: 1px solid purple; 
 }
 
 .left-button {
-  /* float:left; */
-  /* position:relative; */
+  float:left;
+  position:relative;
   padding: 5px; 
   border: 1px solid green;
 }
@@ -59,19 +59,9 @@ button {
   margin: 2px;
 }
 
-
-.center_the_datepicker {
-  /* float:left; */ 
-  /*
-  width:80%;
-  width:50%;
-  */
-  border: 3px solid white; 
-}
-
 .right-button {
-  /* float:left; */
-  /* position:relative; */
+  float:left;
+  position:relative;
   padding: 5px; 
   top: -15px;
   border: 1px solid green; 
