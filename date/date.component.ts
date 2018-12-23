@@ -35,7 +35,9 @@ export class DateComponent implements OnInit {
       let dateString = this.dateUtil.dateObject2String(this.myDateObject);
       console.log("Date.component: about to emit" + dateString);
       this.childEvent.emit(dateString);
+      return true;
     }
+    return false;
   }
 
   incr(edge) {
@@ -46,7 +48,9 @@ export class DateComponent implements OnInit {
       let dateString = this.dateUtil.dateObject2String(this.myDateObject);
       console.log("Date.component: about to emit" + dateString);
       this.childEvent.emit(dateString);
+      return true;
     }
+    return false;
   }
 
   setDate(date) {
