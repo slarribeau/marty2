@@ -62,27 +62,26 @@ table {
 
 #menu {
   background-color: black; /*clr 2 menu */
-  height:40px;
+  height:240px;
   /* border: 3px solid blue; */
 }
-
+.foobar {
+  margin: auto;
+  text-align: center; /* children will be ce */
+  width:100%;
+}
 #center_the_menu {
-  /* margin: auto; True Center */
-  margin: 0 0 0 26%; /* Skewed center */
-  width: 40%;
+  margin: auto;
   padding: 0px; 
+  width: 500px;
   text-align: center; /* children will be centered */
-  /* border: 3px solid purple; */
+  border: 3px solid purple; 
 }
 
-#center_the_datepicker {
-  float:left;
-  width:80%;
-}
+
 
 button {
   background-color: rgb(205, 207, 207);
-  position:relative;
   margin: 2px;
 }
 
@@ -178,7 +177,6 @@ button {
   float:left;
   position:relative;
   padding: 5px; 
-  width: 25%;
   /* border: 1px solid green; */
 }
 
@@ -186,7 +184,6 @@ button {
   float:left;
   position:relative;
   padding: 5px; 
-  width: 23%;
   top: -15px;
   /* border: 1px solid green; */
 }

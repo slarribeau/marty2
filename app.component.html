@@ -12,16 +12,18 @@
     </div>
 
     <div id="menu"> 
-      <div  id="center_the_menu">
-        <span id="left-button">
-          <button  (click)="seasonStartDate()">Season Start</button>
-          <button  (click)="decrDate()">-</button>
-        </span>
-        <app-date class="center_the_datepicker" (childEvent)="processChildEvent($event)"></app-date> 
-        <span id="right-button"> 
-          <button  (click)="incrDate()">+</button>
-          <button  (click)="seasonEndDate()">Season End</button>
-        </span>
+      <div class="foobar">
+          <div  id="center_the_menu">
+            <span id="left-button">
+              <button  (click)="seasonStartDate()">Season Start</button>
+              <button  (click)="decrDate()">-</button>
+            </span>
+            <app-date class="center_the_datepicker" (childEvent)="processChildEvent($event)"></app-date> 
+            <span id="right-button"> 
+              <button  (click)="incrDate()">+</button>
+              <button  (click)="seasonEndDate()">Season End</button>
+            </span>
+          </div>
       </div>
     </div>
 
