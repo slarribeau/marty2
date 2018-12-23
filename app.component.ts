@@ -75,14 +75,14 @@ export class AppComponent implements OnInit {
   incrDate(){
     console.log("inc function called");
     if (this.child.incr(this.endOfSeason) == false) {
-       alert("Can't go past end of season")
+       alert("Cannott go past end of season")
     }
   }
 
   decrDate(){
     console.log("dec function called");
     if (this.child.decr(this.startOfSeason) == false) {
-      alert("Can't go before beginning of season")
+      alert("Cannot go past beginning of season")
     }  
   }
 
