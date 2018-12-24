@@ -2,6 +2,7 @@
 sudo npm i -g npm
 
 
+
 2) if needed:
 npm install -g @angular/cli
 npm install @angular/cli
