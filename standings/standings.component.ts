@@ -88,6 +88,7 @@ export class StandingsComponent implements OnInit {
     console.log((this.route.snapshot.paramMap.get('date')));
 
     this.route.paramMap.subscribe((params:ParamMap) => {
+      console.log("subscribe")
       let league = params.get('league');
       let division = params.get('division');
       let date = params.get('date');
