@@ -1,6 +1,7 @@
 import { OnInit, Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import {DateComponent} from './date/date.component';
+import {Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 
 
 @Component({
@@ -55,7 +56,45 @@ export class AppComponent implements OnInit {
     this.endOfSeason = new Date(2018, 8, 30);;
   }
   
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart) {
+          // Show loading indicator        
+            console.log("Start loading");
+            console.log(event);
+
+      }
+
+      if (event instanceof NavigationEnd) {
+          // Hide loading indicator
+          console.log("Done loading");
+          console.log(event);
+          let url = event.url;
+          //Before: left/AL/EAST/2018-9-20(sidebar:right/AL/EAST/2018-9-29)
+          //Remove first 14 characters
+          //After: 2018-9-20(sidebar:right/AL/EAST/2018-9-29
+          let leftDate = url.slice(14, url.length)
+          console.log("Left date = " + leftDate);
+
+          //Remove left paren and everything after
+          leftDate = leftDate.substring(0, leftDate.indexOf('('));
+          console.log("Left date = " + leftDate);
+
+
+          let rightDate = url.split("right").pop();
+          console.log("Right date = " + rightDate);
+      }
+
+      if (event instanceof NavigationError) {
+          // Hide loading indicator
+
+          // Present error to user
+          console.log(event.error);
+          console.log(event);
+      }
+  });
+
+   }
 
   @ViewChild(DateComponent) child: DateComponent;
 
