@@ -134,10 +134,10 @@ server {
 	}
 
 	location /angular/ {
-		#alias /var/www/html/angular/;
-		root /var/www/html;
-		#Angular requires everything default to index.html
-		try_files $uri $uri/ /index.html;
+		#root /var/www/html/angular; will not load
+		#root /var/www/html; will not refresh
+		alias /var/www/html/angular;
+		try_files $uri $uri/ /index.html =404;
 	}
 }
 
