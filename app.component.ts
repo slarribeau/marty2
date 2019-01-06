@@ -70,19 +70,33 @@ export class AppComponent implements OnInit {
           console.log("Done loading");
           console.log(event);
           let url = event.url;
+
           //Before: left/AL/EAST/2018-9-20(sidebar:right/AL/EAST/2018-9-29)
           //Remove first 14 characters
           //After: 2018-9-20(sidebar:right/AL/EAST/2018-9-29
           let leftDate = url.slice(14, url.length)
-          console.log("Left date = " + leftDate);
 
           //Remove left paren and everything after
           leftDate = leftDate.substring(0, leftDate.indexOf('('));
           console.log("Left date = " + leftDate);
 
 
+          //Before: left/AL/EAST/2018-9-20(sidebar:right/AL/EAST/2018-9-29)
+          //Remove all text up to and including string 'right
+          //After: /AL/EAST/2018-9-29)
           let rightDate = url.split("right").pop();
+
+          //Remove first 9 characters
+          rightDate = rightDate.slice(9, rightDate.length)
+
+          //Remove ending right paren 
+          rightDate = rightDate.substring(0, rightDate.indexOf(')'));
+
           console.log("Right date = " + rightDate);
+
+          if (leftDate != rightDate) {
+            alert("This is not OK -- Dates in URL must be the same")
+          }
       }
 
       if (event instanceof NavigationError) {
