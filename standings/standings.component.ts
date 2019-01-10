@@ -22,6 +22,7 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
       <!-- <tr *ngFor="let standing of standings | divisionFilter:(division) | filter:(date)">  -->
       <tr *ngFor="let standing of standings | leagueFilter:(league) | divisionFilter:(division) | filter:(date)">
 
+    
         <td> 
           <img src="assets/icon.png" alt="some text" width=16 height=16 style="float:left;">
         </td>
@@ -32,6 +33,9 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
         <td style="width:200px; ">{{standing.GB}}</td>
       </tr>
     </table>
+    <div *ngIf="(standings | leagueFilter:(league) | divisionFilter:(division) | filter:(date)).length === 0">
+    "No matches"
+    </div>
   `,
   styles:[
     `
@@ -77,25 +81,24 @@ export class StandingsComponent implements OnInit {
 
 
   constructor(private _MlbRepoService: MlbRepoService, private route: ActivatedRoute) { 
-     console.log("StandingsComponent: Constructor");
+     console.log("standings.component: constructor");
   }
 
   ngOnInit() {
-    console.log("StandingsComponent: ngOnInit");
+    console.log("standings.component: ngOnInit");
     this.standings = this._MlbRepoService.getStandings();
-    console.log((this.route.snapshot.paramMap.get('league')));
-    console.log((this.route.snapshot.paramMap.get('division')));
-    console.log((this.route.snapshot.paramMap.get('date')));
+    console.log("standings.component: ngOnInit: " + (this.route.snapshot.paramMap.get('league')));
+    console.log("standings.component: ngOnInit: " + (this.route.snapshot.paramMap.get('division')));
+    console.log("standings.component: ngOnInit: " + (this.route.snapshot.paramMap.get('date')));
 
     this.route.paramMap.subscribe((params:ParamMap) => {
-      console.log("subscribe")
       let league = params.get('league');
       let division = params.get('division');
       let date = params.get('date');
       this.league = league;
       this.division = division;
-
       this.date = date;
+      console.log("standings.component: subscribe " + league + division + date);
     });
 
   }

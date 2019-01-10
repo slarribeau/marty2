@@ -27,7 +27,9 @@ export class DateComponent implements OnInit {
   maxDate: Date;
 
   @Output() public childEvent = new EventEmitter();
-  constructor(private dateUtil: DateUtilitiesService) { }
+  constructor(private dateUtil: DateUtilitiesService) { 
+    console.log("date.component: constructor")
+  }
 
   ngOnInit() {
     //Note that "myDateObject" is presented in the DatePicker Component's HTML
@@ -35,7 +37,7 @@ export class DateComponent implements OnInit {
     this.myDateObject = new Date(2018, 8, 30);
     this.minDate = new Date(2018,2,29);
     this.maxDate = new Date(2018,8,30);
-    console.log("Date.component: ngOnInit" + this.myDateObject)
+    console.log("date.component: ngOnInit" + this.myDateObject)
   }
 
   decr(edge) {
@@ -44,7 +46,7 @@ export class DateComponent implements OnInit {
     if (myDateObjectTmp >= edge) { //Don't decrement past beg of season.
       this.myDateObject=myDateObjectTmp;
       let dateString = this.dateUtil.dateObject2String(this.myDateObject);
-      console.log("Date.component: about to emit" + dateString);
+      console.log("date.component decr(): about to emit: " + dateString);
       this.childEvent.emit(dateString);
       return true;
     }
@@ -57,7 +59,7 @@ export class DateComponent implements OnInit {
     if (myDateObjectTmp <= edge) { //Dont increment past end of season.
       this.myDateObject = myDateObjectTmp;
       let dateString = this.dateUtil.dateObject2String(this.myDateObject);
-      console.log("Date.component: about to emit" + dateString);
+      console.log("date.component incr(): about to emit: " + dateString);
       this.childEvent.emit(dateString);
       return true;
     }
@@ -65,20 +67,21 @@ export class DateComponent implements OnInit {
   }
 
   setDate(date) {
-    console.log("setDate");
+    console.log("date.component: setDate()");
     this.myDateObject = date;
     let dateString = this.dateUtil.dateObject2String(this.myDateObject);
     this.childEvent.emit(dateString);
   }
 
   getDate() {
+    console.log("date.component: getDate()");
     return this.dateUtil.dateObject2String(this.myDateObject);
   }
 
   sendEvent(event){ 
-    console.log("Date.component: send event received: " + event.value)
+    console.log("date.component: sendEvent() received: " + event.value)
     let dateString = this.dateUtil.dateObject2String(event.value);
-    console.log("Date.component: about to emit" + dateString);
+    console.log("date.component: sendEvent() about to emit: " + dateString);
     this.childEvent.emit(dateString);
   }
 }

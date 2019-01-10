@@ -3,10 +3,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class MlbRepoService {
 
-  constructor() { }
+  constructor() { 
+    console.log("mlb-repo.service.ts: constructor")
+  }
 
   //http://mlb.mlb.com/mlb/standings/index.jsp?ymd=20180418#20180423
   getStandings() {
+    console.log("mlb-repo.service.ts: getStandings")
     return [
 {"League":"AL", "Division":"EAST", "Team":"NYY", "W":"1",  "L":"0",  "PCT":"1.000",  "GB":"--",  "Date":"2018-3-29"},  
 {"League":"AL", "Division":"EAST", "Team":"TBR", "W":"1",  "L":"0",  "PCT":"1.000",  "GB":"--",  "Date":"2018-3-29"},  

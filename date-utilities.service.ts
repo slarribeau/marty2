@@ -7,6 +7,7 @@ export class DateUtilitiesService {
   constructor() { }
 
   public getPrevDayObject(inDate: Date) : Date {
+    console.log("date-utilities.service getPrevDayObject()");
     let myDate = new Date(inDate);
     let dateOffset = (24*60*60*1000) * 1; //1 days
     myDate.setTime(myDate.getTime() - dateOffset);
@@ -14,6 +15,7 @@ export class DateUtilitiesService {
   }
 
   public getNextDayObject(inDate: Date) : Date {
+    console.log("date-utilities.service getNextDayObject()");
     let myDate = new Date(inDate);
     let dateOffset = (24*60*60*1000) * 1; //1 days
     myDate.setTime(myDate.getTime() + dateOffset);
@@ -21,6 +23,7 @@ export class DateUtilitiesService {
   }
   
   public dateObject2String(date: Date) : String {
+    console.log("date-utilities.service dateObject2String()");
     let dateString = date.getFullYear() + "-";
     dateString += date.getMonth()+1 + "-";
     dateString += date.getDate();
@@ -28,6 +31,7 @@ export class DateUtilitiesService {
   }
 
   public getPrevDayString(inDate :Date) : String {
+    console.log("date-utilities.service getPrevDayString()");
     let myDate = new Date(inDate);
     let dateOffset = (24*60*60*1000) * 1; //1 days
     myDate.setTime(myDate.getTime() - dateOffset);
