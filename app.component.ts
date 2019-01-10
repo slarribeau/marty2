@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe((event: Event) => {
       console.log("app.component.ts: SUBSCRIBE")
       console.log(event);
-      /*
+    
       if (event instanceof NavigationStart) {
           // Show loading indicator        
             console.log("SUBSCRIBE: Start loading");
@@ -104,8 +104,8 @@ export class AppComponent implements OnInit {
 
           let appDate = this.child.getDate()
           if (appDate != leftDate) {
-            alert("This is not OK -- Dates in URL (" + leftDate + ") not matching date in app (" + appDate +")");
-
+            //Dates in URL (" + leftDate + ") not matching date in app (" + appDate +")");
+            //So, will update date in app from URL
             let tmp = leftDate.split("-");
             //(3) ["2018", "9", "30"]
 
@@ -124,7 +124,6 @@ export class AppComponent implements OnInit {
           console.log(event.error);
           console.log(event);
       }
-      */
     });
 
   }
