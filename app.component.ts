@@ -46,6 +46,7 @@ export class AppComponent implements OnInit {
 ];
   
   ngOnInit() {
+    console.log("app.component.ts: ngOnInit")
     this.currentLeagueLeft = this.leagueChoices[0].value;
     this.currentLeagueRight = this.leagueChoices[0].value;
     this.currentDivisionLeft = this.divisionChoices[0].value
@@ -57,19 +58,21 @@ export class AppComponent implements OnInit {
   }
   
   constructor(private router: Router) {
+    console.log("app.component.ts: constructor")
+
     this.router.events.subscribe((event: Event) => {
+      console.log("app.component.ts: SUBSCRIBE")
+      console.log(event);
+      /*
       if (event instanceof NavigationStart) {
           // Show loading indicator        
-            console.log("Start loading");
-            console.log(event);
-
+            console.log("SUBSCRIBE: Start loading");
       }
 
       if (event instanceof NavigationEnd) {
           // Hide loading indicator
-          console.log("Done loading");
-          console.log(event);
-          let url = event.url;
+          console.log("SUBSCRIBE: Done loading");
+          let url = event.urlAfterRedirects;
 
           //Before: left/AL/EAST/2018-9-20(sidebar:right/AL/EAST/2018-9-29)
           //Remove first 14 characters
@@ -95,7 +98,22 @@ export class AppComponent implements OnInit {
           console.log("Right date = " + rightDate);
 
           if (leftDate != rightDate) {
-            alert("This is not OK -- Dates in URL must be the same")
+            alert("This is not OK -- Dates in URL must be the same");
+            this.router.navigate(['/']);
+          }
+
+          let appDate = this.child.getDate()
+          if (appDate != leftDate) {
+            alert("This is not OK -- Dates in URL (" + leftDate + ") not matching date in app (" + appDate +")");
+
+            let tmp = leftDate.split("-");
+            //(3) ["2018", "9", "30"]
+
+            let yearInt = parseInt(tmp[0]);
+            let monthInt = parseInt(tmp[1]) - 1;
+            let dayInt = parseInt(tmp[2]);
+            console.log(yearInt, monthInt, dayInt)
+            this.child.setDate(new Date(yearInt, monthInt, dayInt));
           }
       }
 
@@ -106,54 +124,61 @@ export class AppComponent implements OnInit {
           console.log(event.error);
           console.log(event);
       }
-  });
+      */
+    });
 
-   }
+  }
 
   @ViewChild(DateComponent) child: DateComponent;
 
 
   processChildEvent(date) {
-    console.log("processChildEvent " + date);
+    console.log("app.component: processChildEvent() " + date);
     //this.router.navigateByUrl('/left/1/'+date);
     //this.router.navigate([{ outlets: {
     //  sidebar: ['right', '1', '2018-4-26']
     //}}]);
     let x = '/left/'+this.currentLeagueLeft+'/'+this.currentDivisionLeft+'/'+date;
     x = x +'(sidebar:'+'right/'+this.currentLeagueRight+'/'+this.currentDivisionRight+'/'+date+')';
-    console.log(x);
+    console.log("app.component: processChildEvent() will nav to " + x);
     this.router.navigateByUrl(x);
   }
 
   incrDate(){
-    console.log("inc function called");
+    console.log("app.component: incrDate() called");
     if (this.child.incr(this.endOfSeason) == false) {
-       alert("Cannott go past end of season")
+       alert("Cannot go past end of season")
     }
   }
 
   decrDate(){
-    console.log("dec function called");
+    console.log("app.component: decrDate() called");
     if (this.child.decr(this.startOfSeason) == false) {
       alert("Cannot go past beginning of season")
     }  
   }
 
   seasonStartDate(){
+    console.log("app.component: seasonStartDate() called");
     this.child.setDate(this.startOfSeason);
   }
 
   seasonEndDate(){
+    console.log("app.component: seasonEndDate() called");
     this.child.setDate(this.endOfSeason);
   }
 
 
   setStyle(e, which) {
+    console.log("app.component: setStyle() begin param dump");
+    console.log(e);
+    console.log(which);
+    console.log("app.component: setStyle() end param dump");
+
     let date = this.child.getDate()
     let x = '/left/'+this.currentLeagueLeft+'/'+this.currentDivisionLeft+'/'+date;
     x = x +'(sidebar:'+'right/'+this.currentLeagueRight+'/'+this.currentDivisionRight+'/'+date+')';
-    console.log(e);
-    console.log(x);
+    console.log("app.component: setStyle() about to navigate to: ", x);
     this.router.navigateByUrl(x);
   }
 }
