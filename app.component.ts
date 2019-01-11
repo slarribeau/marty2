@@ -73,48 +73,26 @@ export class AppComponent implements OnInit {
           // Hide loading indicator
           console.log("SUBSCRIBE: Done loading");
           let url = event.urlAfterRedirects;
+          //De Construct URL
+          let deConstructedUrl = url.split("/");
+          console.log(deConstructedUrl);
+          //(8) ["", "left", "AL", "EAST", "2018-9-29(sidebar:right", "AL", "EAST", "2018-9-29)"]0: ""1: "left"2: "AL"3: "EAST"4: "2018-9-29(sidebar:right"5: "AL"6: "EAST"7: "2018-9-29)"
+          let myLeftLeague = deConstructedUrl[2];
+          let myLeftDivision = deConstructedUrl[3];  
+          let myLeftDate = deConstructedUrl[4].substring(0, deConstructedUrl[4].indexOf('('));
+          let myRightLeague = deConstructedUrl[5];
+          let myRightDivision = deConstructedUrl[6];  
+          let myRightDate = deConstructedUrl[7].substring(0, deConstructedUrl[7].indexOf(')'));
+          console.log(myLeftLeague, myLeftDivision, myLeftDate, myRightLeague, myRightDivision, myRightDate);
 
-          //Before: left/AL/EAST/2018-9-20(sidebar:right/AL/EAST/2018-9-29)
-          //Remove first 14 characters
-          //After: 2018-9-20(sidebar:right/AL/EAST/2018-9-29
-          let leftDate = url.slice(14, url.length)
-
-          //Remove left paren and everything after
-          leftDate = leftDate.substring(0, leftDate.indexOf('('));
-          console.log("Left date = " + leftDate);
-
-
-          //Before: left/AL/EAST/2018-9-20(sidebar:right/AL/EAST/2018-9-29)
-          //Remove all text up to and including string 'right
-          //After: /AL/EAST/2018-9-29)
-          let rightDate = url.split("right").pop();
-
-          //Remove first 9 characters
-          rightDate = rightDate.slice(9, rightDate.length)
-
-          //Remove ending right paren 
-          rightDate = rightDate.substring(0, rightDate.indexOf(')'));
-
-          console.log("Right date = " + rightDate);
-
-          if (leftDate != rightDate) {
-            alert("This is not OK -- Dates in URL must be the same");
-            this.router.navigate(['/']);
+          if (this.checkDateMatch(myLeftDate, myRightDate) == 0) {
+            return;
           }
-
-          let appDate = this.child.getDate()
-          if (appDate != leftDate) {
-            //Dates in URL (" + leftDate + ") not matching date in app (" + appDate +")");
-            //So, will update date in app from URL
-            let tmp = leftDate.split("-");
-            //(3) ["2018", "9", "30"]
-
-            let yearInt = parseInt(tmp[0]);
-            let monthInt = parseInt(tmp[1]) - 1;
-            let dayInt = parseInt(tmp[2]);
-            console.log(yearInt, monthInt, dayInt)
-            this.child.setDate(new Date(yearInt, monthInt, dayInt));
-          }
+          this.checkAndSetLeftLeague(myLeftLeague);
+          this.checkAndSetLeftDivision(myLeftDivision);
+          this.checkAndSetDate(myLeftDate);
+          this.checkAndSetRightLeague(myRightLeague);
+          this.checkAndSetRightDivision(myRightDivision);
       }
 
       if (event instanceof NavigationError) {
@@ -180,5 +158,53 @@ export class AppComponent implements OnInit {
     console.log("app.component: setStyle() about to navigate to: ", x);
     this.router.navigateByUrl(x);
   }
-}
 
+
+  checkAndSetLeftLeague(myLeftLeague){
+    if (this.currentLeagueLeft != myLeftLeague) {
+      this.currentLeagueLeft = myLeftLeague;
+    }
+  }
+
+  checkAndSetLeftDivision(myLeftDivision) {
+    if (this.currentDivisionLeft != myLeftDivision) {
+    this.currentDivisionLeft = myLeftDivision;
+    }
+  }
+
+  checkAndSetRightLeague(myRightLeague){
+    if (this.currentLeagueRight != myRightLeague) {
+      this.currentLeagueRight = myRightLeague;
+    }
+  }
+  checkAndSetRightDivision(myRightDivision){
+    if (this.currentDivisionRight != myRightDivision) {
+      this.currentDivisionRight = myRightDivision;
+    }
+  }
+
+  checkDateMatch(leftDate, rightDate) {
+    if (leftDate != rightDate) {
+      alert("Dates must match: Left Date = " + leftDate + " Right Date = " + rightDate + " Returning to home page");
+      this.router.navigate(['/']);
+      return 0;
+    }
+    return 1;
+  }
+
+  checkAndSetDate(urlDate){
+    let appDate = this.child.getDate()
+      if (appDate != urlDate) {
+        //Dates in URL (" + leftDate + ") not matching date in app (" + appDate +")");
+        //So, will update date in app from URL
+        let tmp = urlDate.split("-");
+        //(3) ["2018", "9", "30"]
+
+        let yearInt = parseInt(tmp[0]);
+        let monthInt = parseInt(tmp[1]) - 1;
+        let dayInt = parseInt(tmp[2]);
+        console.log(yearInt, monthInt, dayInt)
+        this.child.setDate(new Date(yearInt, monthInt, dayInt));
+  }
+
+}

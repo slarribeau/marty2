@@ -34,7 +34,7 @@ import {ActivatedRoute, Router, Route, ParamMap} from '@angular/router';
       </tr>
     </table>
     <div *ngIf="(standings | leagueFilter:(league) | divisionFilter:(division) | filter:(date)).length === 0">
-    "No matches"
+    "No Data Displayed -- No Scores Reported For This Date"
     </div>
   `,
   styles:[
