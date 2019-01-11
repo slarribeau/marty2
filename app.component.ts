@@ -205,6 +205,6 @@ export class AppComponent implements OnInit {
         let dayInt = parseInt(tmp[2]);
         console.log(yearInt, monthInt, dayInt)
         this.child.setDate(new Date(yearInt, monthInt, dayInt));
+      }
   }
-
 }
