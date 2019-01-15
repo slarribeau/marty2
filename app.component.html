@@ -18,13 +18,17 @@
             <button  (click)="seasonStartDate()">Season Start</button>
             <button  (click)="decrDate()">-</button>
           </span>  
+
           <span class="center_the_datepicker">
               <app-date (childEvent)="processChildEvent($event)"></app-date> -->
           </span>
-            <span class="right-button"> 
+
+          <span class="right-button"> 
             <button  (click)="incrDate()">+</button>
             <button  (click)="seasonEndDate()">Season End</button>
           </span>
+          <!-- prevent float chaos-->
+          <div style="clear:both"></div>
         </div>
       </div>
     </div>

@@ -36,8 +36,8 @@ body {
 
 .center_the_menu {
   position: relative;
-  /* margin: auto; True Center */
-  margin: 0 0 0 27%; /* Skewed center */
+  margin: auto; /* True Center */
+  /* margin: 0 0 0 27%; /* Skewed center */
   text-align: center;
 
   width:500px;
@@ -87,7 +87,7 @@ button {
   width: 85%;
   padding: 10px; 
 
-  border: 3px solid green; 
+  /* border: 3px solid green; */
 }
 
 .center {
@@ -155,16 +155,34 @@ button {
 /* For mobile phones portrait mode: */
 @media only screen and (max-width:500px) {
   .menu {
-    border: 1px solid yellow; 
-    height: 100px;
+     height: 100px;
   }
   .center_the_menu {
-    border: 1px solid white; 
+    width:100%;
+    margin: 0 0 0 0; /* Un-Skewed center */
+
   }
-  .left-button, .mat-form-field{
-    border: 1px solid green; 
+
+  button {
+    font-size : 5px;
+  }
+  /*
+  .left-button, .mat-form-field, .right-button{
+    border: 1px solid red; 
     float:none;
+    left:7px;
+    font-size : 20px;
   }
+
+   .mat-form-field {
+    left: 92px; 
+  }
+  .right-button {
+    top:30px;
+    left:-310px;
+  }
+*/
+
 }
 
 /* Used in datecomponent */

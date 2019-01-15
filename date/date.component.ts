@@ -13,7 +13,7 @@ import {ViewEncapsulation} from '@angular/core'
                  matInput [matDatepicker]="picker" 
                  [(ngModel)]="myDateObject"  
                  (dateChange)="sendEvent($event)" 
-                 placeholder="Choose a date...">
+                 placeholder="">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker>  </mat-datepicker>
       </mat-form-field> 
