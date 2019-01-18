@@ -40,8 +40,8 @@ body {
   /* margin: 0 0 0 27%; /* Skewed center */
   text-align: center;
 
-  width:500px;
-  /* border: 1px solid purple; */
+  width:385px;
+  /* border: 1px solid red; */
 }
 
 .left-button {
@@ -141,6 +141,11 @@ button {
 
 .social_icon {
   margin:0px 10px 0px 10px;
+}
+
+.mat-datepicker-content .mat-calendar
+{ 
+     zoom: 0.85;
 }
 
 

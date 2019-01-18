@@ -6,7 +6,7 @@ import {ViewEncapsulation} from '@angular/core'
   selector: 'app-date',
   template: `
     <p>
-          <mat-form-field style="color:grey" id="position-top">
+          <mat-form-field style="color:grey; width:110px" id="position-top">
           <input class="myDatePicker" 
                  [min]="this.minDate"
                  [max]="this.maxDate"
@@ -20,6 +20,7 @@ import {ViewEncapsulation} from '@angular/core'
     </p>
   `,
   styleUrls: ['../app.component.css']
+  
 })
 export class DateComponent implements OnInit {
   myDateObject: Date;
