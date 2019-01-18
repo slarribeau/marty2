@@ -37,11 +37,11 @@ body {
 .center_the_menu {
   position: relative;
   margin: auto; /* True Center */
-  /* margin: 0 0 0 27%; /* Skewed center */
+  margin: 0 0 0 31%; /* Skewed center */
   text-align: center;
 
   width:385px;
-  /*border: 1px solid red; */
+  border: 1px solid red;
 }
 
 .left-button {
@@ -154,6 +154,10 @@ button {
     top:-35px;
   }
 
+  .center_the_menu {
+    margin: 0 0 0 27%; /* Skewed center */
+  }
+
 }
 
 /* For mobile phones portrait mode: */
@@ -163,6 +167,7 @@ button {
   }
   .center_the_menu {
     width:330px;
+    margin: auto; /* True Center */
   }
 
   .right-button {
