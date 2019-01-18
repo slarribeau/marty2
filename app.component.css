@@ -41,7 +41,7 @@ body {
   text-align: center;
 
   width:385px;
-  /* border: 1px solid red; */
+  /*border: 1px solid red; */
 }
 
 .left-button {
@@ -143,51 +143,31 @@ button {
   margin:0px 10px 0px 10px;
 }
 
-.mat-datepicker-content .mat-calendar
-{ 
-     zoom: 0.85;
-}
-
-
 
 @media only screen and (max-width:800px) {
   /* At 800 px (mobile landscape) we start to lose data in standings columns*/
   .left, .center, .right {
     width: 100%;
   }
+
+  .right-button {
+    top:-35px;
+  }
+
 }
 
 /* For mobile phones portrait mode: */
 @media only screen and (max-width:500px) {
-  .menu {
-     height: 100px;
+  button {
+    font-size : 7px;
   }
   .center_the_menu {
-    width:100%;
-    margin: 0 0 0 0; /* Un-Skewed center */
-
+    width:330px;
   }
 
-  button {
-    font-size : 5px;
-  }
-  /*
-  .left-button, .mat-form-field, .right-button{
-    border: 1px solid red; 
-    float:none;
-    left:7px;
-    font-size : 20px;
-  }
-
-   .mat-form-field {
-    left: 92px; 
-  }
   .right-button {
-    top:30px;
-    left:-310px;
+    top:-15px;
   }
-*/
-
 }
 
 /* Used in datecomponent */
