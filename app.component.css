@@ -21,35 +21,26 @@ body {
   background-color: black;
 }
 
-.middle {
-  width:100%;
-
-  /* border: 1px solid white; */
-}
-
 .menu {
   background-color: black; /*clr 2 menu */
   height:40px;
-
-  /* border: 1px solid blue; */
 }
 
 .center_the_menu {
-  position: relative;
   margin: auto; /* True Center */
-  margin: 0 0 0 31%; /* Skewed center */
   text-align: center;
-
-  width:385px;
-  border: 1px solid red;
+  width:80%;
+}
+.center_the_datepicker {
+  display:inline-block;
 }
 
 .left-button {
-  float:left;
+  top:-62px;
   position:relative;
   padding: 5px; 
-  /* border: 1px solid green; */
 }
+
 
 button {
   background-color: rgb(205, 207, 207);
@@ -58,11 +49,16 @@ button {
 }
 
 .right-button {
-  float:left;
+  top:-62px; /* Fix me */
   position:relative;
   padding: 5px; 
-  top: -15px;
-  /* border: 1px solid green; */
+}
+
+.button_fill {
+  /* This is used to shift the buttons to the left or right */
+  display:inline-block;
+  width:14%;
+  top:-62px; /* Fix me */
 }
 
 .left {
@@ -153,20 +149,21 @@ button {
   .right-button {
     top:-35px;
   }
-
+/*
   .center_the_menu {
-    margin: 0 0 0 27%; /* Skewed center */
+    margin: 0 0 0 27%; Skewed center
   }
+  */
 
 }
 
 /* For mobile phones portrait mode: */
 @media only screen and (max-width:500px) {
-  button {
+  /*button {
     font-size : 7px;
-  }
+  }*/
   .center_the_menu {
-    width:330px;
+    width:30px;
     margin: auto; /* True Center */
   }
 
